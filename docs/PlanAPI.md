@@ -2,14 +2,12 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**PlanCreate**](PlanAPI.md#PlanCreate) | **Post** /plan | Create Plan
-[**PlanFetch**](PlanAPI.md#PlanFetch) | **Get** /plan/{code} | Fetch Plan
-[**PlanList**](PlanAPI.md#PlanList) | **Get** /plan | List Plans
-[**PlanUpdate**](PlanAPI.md#PlanUpdate) | **Put** /plan/{code} | Update Plan
-
-
+| Method                                  | HTTP request         | Description |
+| --------------------------------------- | -------------------- | ----------- |
+| [**PlanCreate**](PlanAPI.md#PlanCreate) | **Post** /plan       | Create Plan |
+| [**PlanFetch**](PlanAPI.md#PlanFetch)   | **Get** /plan/{code} | Fetch Plan  |
+| [**PlanList**](PlanAPI.md#PlanList)     | **Get** /plan        | List Plans  |
+| [**PlanUpdate**](PlanAPI.md#PlanUpdate) | **Put** /plan/{code} | Update Plan |
 
 ## PlanCreate
 
@@ -26,7 +24,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -53,23 +51,20 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiPlanCreateRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **string** | Name of plan | 
- **amount** | **int32** | Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR | 
- **interval** | **string** | Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually | 
- **description** | **string** | A description for this plan | 
- **sendInvoices** | **bool** | Set to false if you don&#39;t want invoices to be sent to your customers | 
- **sendSms** | **bool** | Set to false if you don&#39;t want text messages to be sent to your customers | 
- **currency** | **string** | Currency in which amount is set. Allowed values are NGN, GHS, ZAR or USD | 
- **invoiceLimit** | **int32** | Number of invoices to raise during subscription to this plan.  Can be overridden by specifying an invoice_limit while subscribing. | 
+| Name             | Type       | Description                                                                                                                       | Notes |
+| ---------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **name**         | **string** | Name of plan                                                                                                                      |
+| **amount**       | **int32**  | Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR                           |
+| **interval**     | **string** | Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually                                                |
+| **description**  | **string** | A description for this plan                                                                                                       |
+| **sendInvoices** | **bool**   | Set to false if you don&#39;t want invoices to be sent to your customers                                                          |
+| **sendSms**      | **bool**   | Set to false if you don&#39;t want text messages to be sent to your customers                                                     |
+| **currency**     | **string** | Currency in which amount is set. Allowed values are NGN, GHS, ZAR or USD                                                          |
+| **invoiceLimit** | **int32**  | Number of invoices to raise during subscription to this plan. Can be overridden by specifying an invoice_limit while subscribing. |
 
 ### Return type
 
@@ -88,7 +83,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## PlanFetch
 
 > Response PlanFetch(ctx, code).Execute()
@@ -104,11 +98,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	code := "code_example" // string | 
+	code := "code_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -124,20 +118,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** |  | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiPlanFetchRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -156,7 +147,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## PlanList
 
 > Response PlanList(ctx).PerPage(perPage).Page(page).Interval(interval).Amount(amount).From(from).To(to).Execute()
@@ -173,7 +163,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -198,21 +188,18 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiPlanListRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **perPage** | **int32** | Number of records to fetch per page | 
- **page** | **int32** | The section to retrieve | 
- **interval** | **string** | Specify interval of the plan | 
- **amount** | **int32** | The amount on the plans to retrieve | 
- **from** | **time.Time** | The start date | 
- **to** | **time.Time** | The end date | 
+| Name         | Type          | Description                         | Notes |
+| ------------ | ------------- | ----------------------------------- | ----- |
+| **perPage**  | **int32**     | Number of records to fetch per page |
+| **page**     | **int32**     | The section to retrieve             |
+| **interval** | **string**    | Specify interval of the plan        |
+| **amount**   | **int32**     | The amount on the plans to retrieve |
+| **from**     | **time.Time** | The start date                      |
+| **to**       | **time.Time** | The end date                        |
 
 ### Return type
 
@@ -231,7 +218,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## PlanUpdate
 
 > Response PlanUpdate(ctx, code).Name(name).Amount(amount).Interval(interval).Description(description).SendInvoices(sendInvoices).SendSms(sendSms).Currency(currency).InvoiceLimit(invoiceLimit).Execute()
@@ -247,11 +233,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	code := "code_example" // string | 
+	code := "code_example" // string |
 	name := "name_example" // string | Name of plan (optional)
 	amount := int32(56) // int32 | Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (optional)
 	interval := "interval_example" // string | Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually (optional)
@@ -275,28 +261,26 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** |  | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiPlanUpdateRequest struct via the builder pattern
 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **name** | **string** | Name of plan | 
- **amount** | **int32** | Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR | 
- **interval** | **string** | Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually | 
- **description** | **bool** | A description for this plan | 
- **sendInvoices** | **bool** | Set to false if you don&#39;t want invoices to be sent to your customers | 
- **sendSms** | **bool** | Set to false if you don&#39;t want text messages to be sent to your customers | 
- **currency** | **string** | Currency in which amount is set. Allowed values are NGN, GHS, ZAR or USD | 
- **invoiceLimit** | **int32** | Number of invoices to raise during subscription to this plan.  Can be overridden by specifying an invoice_limit while subscribing. | 
+**name** | **string** | Name of plan |
+**amount** | **int32** | Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR |
+**interval** | **string** | Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually |
+**description** | **bool** | A description for this plan |
+**sendInvoices** | **bool** | Set to false if you don&#39;t want invoices to be sent to your customers |
+**sendSms** | **bool** | Set to false if you don&#39;t want text messages to be sent to your customers |
+**currency** | **string** | Currency in which amount is set. Allowed values are NGN, GHS, ZAR or USD |
+**invoiceLimit** | **int32** | Number of invoices to raise during subscription to this plan. Can be overridden by specifying an invoice_limit while subscribing. |
 
 ### Return type
 
@@ -314,4 +298,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

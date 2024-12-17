@@ -2,17 +2,15 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**CustomerCreate**](CustomerAPI.md#CustomerCreate) | **Post** /customer | Create Customer
-[**CustomerDeactivateAuthorization**](CustomerAPI.md#CustomerDeactivateAuthorization) | **Post** /customer/deactivate_authorization | Deactivate Authorization
-[**CustomerFetch**](CustomerAPI.md#CustomerFetch) | **Get** /customer/{code} | Fetch Customer
-[**CustomerList**](CustomerAPI.md#CustomerList) | **Get** /customer | List Customers
-[**CustomerRiskAction**](CustomerAPI.md#CustomerRiskAction) | **Post** /customer/set_risk_action | White/blacklist Customer
-[**CustomerUpdate**](CustomerAPI.md#CustomerUpdate) | **Put** /customer/{code} | Update Customer
-[**CustomerValidate**](CustomerAPI.md#CustomerValidate) | **Post** /customer/{code}/identification | Validate Customer
-
-
+| Method                                                                                | HTTP request                                | Description              |
+| ------------------------------------------------------------------------------------- | ------------------------------------------- | ------------------------ |
+| [**CustomerCreate**](CustomerAPI.md#CustomerCreate)                                   | **Post** /customer                          | Create Customer          |
+| [**CustomerDeactivateAuthorization**](CustomerAPI.md#CustomerDeactivateAuthorization) | **Post** /customer/deactivate_authorization | Deactivate Authorization |
+| [**CustomerFetch**](CustomerAPI.md#CustomerFetch)                                     | **Get** /customer/{code}                    | Fetch Customer           |
+| [**CustomerList**](CustomerAPI.md#CustomerList)                                       | **Get** /customer                           | List Customers           |
+| [**CustomerRiskAction**](CustomerAPI.md#CustomerRiskAction)                           | **Post** /customer/set_risk_action          | White/blacklist Customer |
+| [**CustomerUpdate**](CustomerAPI.md#CustomerUpdate)                                   | **Put** /customer/{code}                    | Update Customer          |
+| [**CustomerValidate**](CustomerAPI.md#CustomerValidate)                               | **Post** /customer/{code}/identification    | Validate Customer        |
 
 ## CustomerCreate
 
@@ -29,7 +27,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -53,20 +51,17 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiCustomerCreateRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **string** | Customer&#39;s email address | 
- **firstName** | **string** | Customer&#39;s first name | 
- **lastName** | **string** | Customer&#39;s last name | 
- **phone** | **string** | Customer&#39;s phone number | 
- **metadata** | **string** | Stringified JSON object of custom data | 
+| Name          | Type       | Description                            | Notes |
+| ------------- | ---------- | -------------------------------------- | ----- |
+| **email**     | **string** | Customer&#39;s email address           |
+| **firstName** | **string** | Customer&#39;s first name              |
+| **lastName**  | **string** | Customer&#39;s last name               |
+| **phone**     | **string** | Customer&#39;s phone number            |
+| **metadata**  | **string** | Stringified JSON object of custom data |
 
 ### Return type
 
@@ -85,14 +80,11 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## CustomerDeactivateAuthorization
 
 > Response CustomerDeactivateAuthorization(ctx).AuthorizationCode(authorizationCode).Execute()
 
 Deactivate Authorization
-
-
 
 ### Example
 
@@ -103,7 +95,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -123,16 +115,13 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiCustomerDeactivateAuthorizationRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorizationCode** | **string** | Authorization code to be deactivated | 
+| Name                  | Type       | Description                          | Notes |
+| --------------------- | ---------- | ------------------------------------ | ----- |
+| **authorizationCode** | **string** | Authorization code to be deactivated |
 
 ### Return type
 
@@ -151,7 +140,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## CustomerFetch
 
 > Response CustomerFetch(ctx, code).Execute()
@@ -167,11 +155,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	code := "code_example" // string | 
+	code := "code_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -187,20 +175,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** |  | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiCustomerFetchRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -219,14 +204,11 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## CustomerList
 
 > Response CustomerList(ctx).UseCursor(useCursor).Next(next).Previous(previous).From(from).To(to).PerPage(perPage).Page(page).Execute()
 
 List Customers
-
-
 
 ### Example
 
@@ -237,7 +219,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -263,22 +245,19 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiCustomerListRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **useCursor** | **bool** |  | 
- **next** | **string** |  | 
- **previous** | **string** |  | 
- **from** | **string** |  | 
- **to** | **string** |  | 
- **perPage** | **string** |  | 
- **page** | **string** |  | 
+| Name          | Type       | Description | Notes |
+| ------------- | ---------- | ----------- | ----- |
+| **useCursor** | **bool**   |             |
+| **next**      | **string** |             |
+| **previous**  | **string** |             |
+| **from**      | **string** |             |
+| **to**        | **string** |             |
+| **perPage**   | **string** |             |
+| **page**      | **string** |             |
 
 ### Return type
 
@@ -297,14 +276,11 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## CustomerRiskAction
 
 > Response CustomerRiskAction(ctx).Customer(customer).RiskAction(riskAction).Execute()
 
 White/blacklist Customer
-
-
 
 ### Example
 
@@ -315,7 +291,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -336,17 +312,14 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiCustomerRiskActionRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customer** | **string** | Customer&#39;s code, or email address | 
- **riskAction** | **string** | One of the possible risk actions [ default, allow, deny ]. allow to whitelist.  deny to blacklist. Customers start with a default risk action.  | 
+| Name           | Type       | Description                                                                                                                                   | Notes |
+| -------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **customer**   | **string** | Customer&#39;s code, or email address                                                                                                         |
+| **riskAction** | **string** | One of the possible risk actions [ default, allow, deny ]. allow to whitelist. deny to blacklist. Customers start with a default risk action. |
 
 ### Return type
 
@@ -365,7 +338,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## CustomerUpdate
 
 > Response CustomerUpdate(ctx, code).FirstName(firstName).LastName(lastName).Phone(phone).Metadata(metadata).Execute()
@@ -381,11 +353,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	code := "code_example" // string | 
+	code := "code_example" // string |
 	firstName := "firstName_example" // string | Customer's first name (optional)
 	lastName := "lastName_example" // string | Customer's last name (optional)
 	phone := "phone_example" // string | Customer's phone number (optional)
@@ -405,24 +377,22 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** |  | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiCustomerUpdateRequest struct via the builder pattern
 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **firstName** | **string** | Customer&#39;s first name | 
- **lastName** | **string** | Customer&#39;s last name | 
- **phone** | **string** | Customer&#39;s phone number | 
- **metadata** | **string** | Stringified JSON object of custom data | 
+**firstName** | **string** | Customer&#39;s first name |
+**lastName** | **string** | Customer&#39;s last name |
+**phone** | **string** | Customer&#39;s phone number |
+**metadata** | **string** | Stringified JSON object of custom data |
 
 ### Return type
 
@@ -441,14 +411,11 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## CustomerValidate
 
-> Accepted CustomerValidate(ctx, code).FirstName(firstName).LastName(lastName).Type_(type_).Country(country).Bvn(bvn).BankCode(bankCode).AccountNumber(accountNumber).Value(value).Execute()
+> Accepted CustomerValidate(ctx, code).FirstName(firstName).LastName(lastName).Type*(type*).Country(country).Bvn(bvn).BankCode(bankCode).AccountNumber(accountNumber).Value(value).Execute()
 
 Validate Customer
-
-
 
 ### Example
 
@@ -459,11 +426,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	code := "code_example" // string | 
+	code := "code_example" // string |
 	firstName := "firstName_example" // string | Customer's first name
 	lastName := "lastName_example" // string | Customer's last name
 	type_ := "type__example" // string | Predefined types of identification.
@@ -487,28 +454,26 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** |  | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiCustomerValidateRequest struct via the builder pattern
 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **firstName** | **string** | Customer&#39;s first name | 
- **lastName** | **string** | Customer&#39;s last name | 
- **type_** | **string** | Predefined types of identification. | 
- **country** | **string** | Two-letter country code of identification issuer | 
- **bvn** | **string** | Customer&#39;s Bank Verification Number | 
- **bankCode** | **string** | You can get the list of bank codes by calling the List Banks endpoint (https://api.paystack.co/bank). | 
- **accountNumber** | **string** | Customer&#39;s bank account number. | 
- **value** | **string** | Customer&#39;s identification number. Required if type is bvn | 
+**firstName** | **string** | Customer&#39;s first name |
+**lastName** | **string** | Customer&#39;s last name |
+**type\_** | **string** | Predefined types of identification. |
+**country** | **string** | Two-letter country code of identification issuer |
+**bvn** | **string** | Customer&#39;s Bank Verification Number |
+**bankCode** | **string** | You can get the list of bank codes by calling the List Banks endpoint (https://api.paystack.co/bank). |
+**accountNumber** | **string** | Customer&#39;s bank account number. |
+**value** | **string** | Customer&#39;s identification number. Required if type is bvn |
 
 ### Return type
 
@@ -526,4 +491,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

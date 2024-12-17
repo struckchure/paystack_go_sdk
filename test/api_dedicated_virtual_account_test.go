@@ -11,10 +11,11 @@ package paystack
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func Test_paystack_DedicatedVirtualAccountAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_paystack_DedicatedVirtualAccountAPIService(t *testing.T) {
 
 	t.Run("Test DedicatedVirtualAccountAPIService DedicatedAccountAddSplit", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DedicatedVirtualAccountAPI.DedicatedAccountAddSplit(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_paystack_DedicatedVirtualAccountAPIService(t *testing.T) {
 
 	t.Run("Test DedicatedVirtualAccountAPIService DedicatedAccountAvailableProviders", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DedicatedVirtualAccountAPI.DedicatedAccountAvailableProviders(context.Background()).Execute()
 
@@ -48,7 +49,7 @@ func Test_paystack_DedicatedVirtualAccountAPIService(t *testing.T) {
 
 	t.Run("Test DedicatedVirtualAccountAPIService DedicatedAccountCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DedicatedVirtualAccountAPI.DedicatedAccountCreate(context.Background()).Execute()
 
@@ -60,7 +61,7 @@ func Test_paystack_DedicatedVirtualAccountAPIService(t *testing.T) {
 
 	t.Run("Test DedicatedVirtualAccountAPIService DedicatedAccountDeactivate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountId string
 
@@ -74,7 +75,7 @@ func Test_paystack_DedicatedVirtualAccountAPIService(t *testing.T) {
 
 	t.Run("Test DedicatedVirtualAccountAPIService DedicatedAccountFetch", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountId string
 
@@ -88,7 +89,7 @@ func Test_paystack_DedicatedVirtualAccountAPIService(t *testing.T) {
 
 	t.Run("Test DedicatedVirtualAccountAPIService DedicatedAccountList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DedicatedVirtualAccountAPI.DedicatedAccountList(context.Background()).Execute()
 
@@ -100,7 +101,7 @@ func Test_paystack_DedicatedVirtualAccountAPIService(t *testing.T) {
 
 	t.Run("Test DedicatedVirtualAccountAPIService DedicatedAccountRemoveSplit", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DedicatedVirtualAccountAPI.DedicatedAccountRemoveSplit(context.Background()).Execute()
 

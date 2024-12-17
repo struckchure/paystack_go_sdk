@@ -11,10 +11,11 @@ package paystack
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func Test_paystack_ChargeAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_paystack_ChargeAPIService(t *testing.T) {
 
 	t.Run("Test ChargeAPIService ChargeCheck", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var reference string
 
@@ -38,7 +39,7 @@ func Test_paystack_ChargeAPIService(t *testing.T) {
 
 	t.Run("Test ChargeAPIService ChargeCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ChargeAPI.ChargeCreate(context.Background()).Execute()
 
@@ -50,7 +51,7 @@ func Test_paystack_ChargeAPIService(t *testing.T) {
 
 	t.Run("Test ChargeAPIService ChargeSubmitAddress", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ChargeAPI.ChargeSubmitAddress(context.Background()).Execute()
 
@@ -62,7 +63,7 @@ func Test_paystack_ChargeAPIService(t *testing.T) {
 
 	t.Run("Test ChargeAPIService ChargeSubmitBirthday", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ChargeAPI.ChargeSubmitBirthday(context.Background()).Execute()
 
@@ -74,7 +75,7 @@ func Test_paystack_ChargeAPIService(t *testing.T) {
 
 	t.Run("Test ChargeAPIService ChargeSubmitOtp", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ChargeAPI.ChargeSubmitOtp(context.Background()).Execute()
 
@@ -86,7 +87,7 @@ func Test_paystack_ChargeAPIService(t *testing.T) {
 
 	t.Run("Test ChargeAPIService ChargeSubmitPhone", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ChargeAPI.ChargeSubmitPhone(context.Background()).Execute()
 
@@ -98,7 +99,7 @@ func Test_paystack_ChargeAPIService(t *testing.T) {
 
 	t.Run("Test ChargeAPIService ChargeSubmitPin", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ChargeAPI.ChargeSubmitPin(context.Background()).Execute()
 

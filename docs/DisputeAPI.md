@@ -2,18 +2,16 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**DisputeDownload**](DisputeAPI.md#DisputeDownload) | **Get** /dispute/export | Export Disputes
-[**DisputeEvidence**](DisputeAPI.md#DisputeEvidence) | **Post** /dispute/{id}/evidence | Add Evidence
-[**DisputeFetch**](DisputeAPI.md#DisputeFetch) | **Get** /dispute/{id} | Fetch Dispute
-[**DisputeList**](DisputeAPI.md#DisputeList) | **Get** /dispute | List Disputes
-[**DisputeResolve**](DisputeAPI.md#DisputeResolve) | **Put** /dispute/{id}/resolve | Resolve a Dispute
-[**DisputeTransaction**](DisputeAPI.md#DisputeTransaction) | **Get** /dispute/transaction/{id} | List Transaction Disputes
-[**DisputeUpdate**](DisputeAPI.md#DisputeUpdate) | **Put** /dispute/{id} | Update Dispute
-[**DisputeUploadUrl**](DisputeAPI.md#DisputeUploadUrl) | **Get** /dispute/{id}/upload_url | Get Upload URL
-
-
+| Method                                                     | HTTP request                      | Description               |
+| ---------------------------------------------------------- | --------------------------------- | ------------------------- |
+| [**DisputeDownload**](DisputeAPI.md#DisputeDownload)       | **Get** /dispute/export           | Export Disputes           |
+| [**DisputeEvidence**](DisputeAPI.md#DisputeEvidence)       | **Post** /dispute/{id}/evidence   | Add Evidence              |
+| [**DisputeFetch**](DisputeAPI.md#DisputeFetch)             | **Get** /dispute/{id}             | Fetch Dispute             |
+| [**DisputeList**](DisputeAPI.md#DisputeList)               | **Get** /dispute                  | List Disputes             |
+| [**DisputeResolve**](DisputeAPI.md#DisputeResolve)         | **Put** /dispute/{id}/resolve     | Resolve a Dispute         |
+| [**DisputeTransaction**](DisputeAPI.md#DisputeTransaction) | **Get** /dispute/transaction/{id} | List Transaction Disputes |
+| [**DisputeUpdate**](DisputeAPI.md#DisputeUpdate)           | **Put** /dispute/{id}             | Update Dispute            |
+| [**DisputeUploadUrl**](DisputeAPI.md#DisputeUploadUrl)     | **Get** /dispute/{id}/upload_url  | Get Upload URL            |
 
 ## DisputeDownload
 
@@ -31,7 +29,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -55,20 +53,17 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDisputeDownloadRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **perPage** | **int32** | Number of records to fetch per page | 
- **page** | **int32** | The section to retrieve | 
- **status** | **string** |  | 
- **from** | **time.Time** | The start date | 
- **to** | **time.Time** | The end date | 
+| Name        | Type          | Description                         | Notes |
+| ----------- | ------------- | ----------------------------------- | ----- |
+| **perPage** | **int32**     | Number of records to fetch per page |
+| **page**    | **int32**     | The section to retrieve             |
+| **status**  | **string**    |                                     |
+| **from**    | **time.Time** | The start date                      |
+| **to**      | **time.Time** | The end date                        |
 
 ### Return type
 
@@ -87,7 +82,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## DisputeEvidence
 
 > Response DisputeEvidence(ctx, id).CustomerEmail(customerEmail).CustomerName(customerName).CustomerPhone(customerPhone).ServiceDetails(serviceDetails).DeliveryAddress(deliveryAddress).DeliveryDate(deliveryDate).Execute()
@@ -104,7 +98,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -130,26 +124,24 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | Dispute ID | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          | Dispute ID                                                                  |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDisputeEvidenceRequest struct via the builder pattern
 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **customerEmail** | **string** | Customer email | 
- **customerName** | **string** | Customer name | 
- **customerPhone** | **string** | Customer mobile number | 
- **serviceDetails** | **string** | Details of service offered | 
- **deliveryAddress** | **string** | Delivery address | 
- **deliveryDate** | **time.Time** | ISO 8601 representation of delivery date (YYYY-MM-DD) | 
+**customerEmail** | **string** | Customer email |
+**customerName** | **string** | Customer name |
+**customerPhone** | **string** | Customer mobile number |
+**serviceDetails** | **string** | Details of service offered |
+**deliveryAddress** | **string** | Delivery address |
+**deliveryDate** | **time.Time** | ISO 8601 representation of delivery date (YYYY-MM-DD) |
 
 ### Return type
 
@@ -168,7 +160,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## DisputeFetch
 
 > Response DisputeFetch(ctx, id).Execute()
@@ -184,7 +175,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -204,20 +195,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | Dispute ID | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          | Dispute ID                                                                  |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDisputeFetchRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -236,7 +224,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## DisputeList
 
 > Response DisputeList(ctx).PerPage(perPage).Page(page).Status(status).Transaction(transaction).From(from).To(to).Execute()
@@ -253,7 +240,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -278,21 +265,18 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDisputeListRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **perPage** | **int32** | Number of records to fetch per page | 
- **page** | **int32** | The section to retrieve | 
- **status** | **string** | Dispute Status. Acceptable values are awaiting-merchant-feedback, awaiting-bank-feedback, pending, resolved | 
- **transaction** | **string** | Transaction ID | 
- **from** | **time.Time** | The start date | 
- **to** | **time.Time** | The end date | 
+| Name            | Type          | Description                                                                                                 | Notes |
+| --------------- | ------------- | ----------------------------------------------------------------------------------------------------------- | ----- |
+| **perPage**     | **int32**     | Number of records to fetch per page                                                                         |
+| **page**        | **int32**     | The section to retrieve                                                                                     |
+| **status**      | **string**    | Dispute Status. Acceptable values are awaiting-merchant-feedback, awaiting-bank-feedback, pending, resolved |
+| **transaction** | **string**    | Transaction ID                                                                                              |
+| **from**        | **time.Time** | The start date                                                                                              |
+| **to**          | **time.Time** | The end date                                                                                                |
 
 ### Return type
 
@@ -311,7 +295,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## DisputeResolve
 
 > Response DisputeResolve(ctx, id).Resolution(resolution).Message(message).RefundAmount(refundAmount).UploadedFilename(uploadedFilename).Evidence(evidence).Execute()
@@ -327,7 +310,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -352,25 +335,23 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | Dispute ID | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          | Dispute ID                                                                  |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDisputeResolveRequest struct via the builder pattern
 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **resolution** | **string** | Dispute resolution. Accepted values, merchant-accepted, declined | 
- **message** | **string** | Reason for resolving | 
- **refundAmount** | **string** | The amount to refund, in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR | 
- **uploadedFilename** | **string** | Filename of attachment returned via response from the Dispute upload URL | 
- **evidence** | **int32** | Evidence Id for fraud claims | 
+**resolution** | **string** | Dispute resolution. Accepted values, merchant-accepted, declined |
+**message** | **string** | Reason for resolving |
+**refundAmount** | **string** | The amount to refund, in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR |
+**uploadedFilename** | **string** | Filename of attachment returned via response from the Dispute upload URL |
+**evidence** | **int32** | Evidence Id for fraud claims |
 
 ### Return type
 
@@ -389,7 +370,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## DisputeTransaction
 
 > Response DisputeTransaction(ctx, id).Execute()
@@ -405,7 +385,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -425,20 +405,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | Transaction ID | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          | Transaction ID                                                              |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDisputeTransactionRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -457,7 +434,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## DisputeUpdate
 
 > Response DisputeUpdate(ctx, id).RefundAmount(refundAmount).UploadedFilename(uploadedFilename).Execute()
@@ -473,7 +449,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -495,22 +471,20 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | Dispute ID | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          | Dispute ID                                                                  |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDisputeUpdateRequest struct via the builder pattern
 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **refundAmount** | **string** | The amount to refund, in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR | 
- **uploadedFilename** | **string** | Filename of attachment returned via response from the Dispute upload URL | 
+**refundAmount** | **string** | The amount to refund, in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR |
+**uploadedFilename** | **string** | Filename of attachment returned via response from the Dispute upload URL |
 
 ### Return type
 
@@ -529,7 +503,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## DisputeUploadUrl
 
 > Response DisputeUploadUrl(ctx, id).Execute()
@@ -545,7 +518,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -565,20 +538,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | Dispute ID | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          | Dispute ID                                                                  |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDisputeUploadUrlRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -596,4 +566,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

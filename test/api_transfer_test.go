@@ -11,10 +11,11 @@ package paystack
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func Test_paystack_TransferAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_paystack_TransferAPIService(t *testing.T) {
 
 	t.Run("Test TransferAPIService TransferBulk", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.TransferAPI.TransferBulk(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_paystack_TransferAPIService(t *testing.T) {
 
 	t.Run("Test TransferAPIService TransferDisableOtp", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.TransferAPI.TransferDisableOtp(context.Background()).Execute()
 
@@ -48,7 +49,7 @@ func Test_paystack_TransferAPIService(t *testing.T) {
 
 	t.Run("Test TransferAPIService TransferDisableOtpFinalize", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.TransferAPI.TransferDisableOtpFinalize(context.Background()).Execute()
 
@@ -60,7 +61,7 @@ func Test_paystack_TransferAPIService(t *testing.T) {
 
 	t.Run("Test TransferAPIService TransferDownload", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.TransferAPI.TransferDownload(context.Background()).Execute()
 
@@ -72,7 +73,7 @@ func Test_paystack_TransferAPIService(t *testing.T) {
 
 	t.Run("Test TransferAPIService TransferEnableOtp", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.TransferAPI.TransferEnableOtp(context.Background()).Execute()
 
@@ -84,7 +85,7 @@ func Test_paystack_TransferAPIService(t *testing.T) {
 
 	t.Run("Test TransferAPIService TransferFetch", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var code string
 
@@ -98,7 +99,7 @@ func Test_paystack_TransferAPIService(t *testing.T) {
 
 	t.Run("Test TransferAPIService TransferFinalize", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.TransferAPI.TransferFinalize(context.Background()).Execute()
 
@@ -110,7 +111,7 @@ func Test_paystack_TransferAPIService(t *testing.T) {
 
 	t.Run("Test TransferAPIService TransferInitiate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.TransferAPI.TransferInitiate(context.Background()).Execute()
 
@@ -122,7 +123,7 @@ func Test_paystack_TransferAPIService(t *testing.T) {
 
 	t.Run("Test TransferAPIService TransferList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.TransferAPI.TransferList(context.Background()).Execute()
 
@@ -134,7 +135,7 @@ func Test_paystack_TransferAPIService(t *testing.T) {
 
 	t.Run("Test TransferAPIService TransferResendOtp", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.TransferAPI.TransferResendOtp(context.Background()).Execute()
 
@@ -146,7 +147,7 @@ func Test_paystack_TransferAPIService(t *testing.T) {
 
 	t.Run("Test TransferAPIService TransferVerify", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var reference string
 

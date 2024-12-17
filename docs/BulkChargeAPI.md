@@ -2,16 +2,14 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**BulkChargeCharges**](BulkChargeAPI.md#BulkChargeCharges) | **Get** /bulkcharge/{code}/charges | Fetch Charges in a Batch
-[**BulkChargeFetch**](BulkChargeAPI.md#BulkChargeFetch) | **Get** /bulkcharge/{code} | Fetch Bulk Charge Batch
-[**BulkChargeInitiate**](BulkChargeAPI.md#BulkChargeInitiate) | **Post** /bulkcharge | Initiate Bulk Charge
-[**BulkChargeList**](BulkChargeAPI.md#BulkChargeList) | **Get** /bulkcharge | List Bulk Charge Batches
-[**BulkChargePause**](BulkChargeAPI.md#BulkChargePause) | **Get** /bulkcharge/pause/{code} | Pause Bulk Charge Batch
-[**BulkChargeResume**](BulkChargeAPI.md#BulkChargeResume) | **Get** /bulkcharge/resume/{code} | Resume Bulk Charge Batch
-
-
+| Method                                                        | HTTP request                       | Description              |
+| ------------------------------------------------------------- | ---------------------------------- | ------------------------ |
+| [**BulkChargeCharges**](BulkChargeAPI.md#BulkChargeCharges)   | **Get** /bulkcharge/{code}/charges | Fetch Charges in a Batch |
+| [**BulkChargeFetch**](BulkChargeAPI.md#BulkChargeFetch)       | **Get** /bulkcharge/{code}         | Fetch Bulk Charge Batch  |
+| [**BulkChargeInitiate**](BulkChargeAPI.md#BulkChargeInitiate) | **Post** /bulkcharge               | Initiate Bulk Charge     |
+| [**BulkChargeList**](BulkChargeAPI.md#BulkChargeList)         | **Get** /bulkcharge                | List Bulk Charge Batches |
+| [**BulkChargePause**](BulkChargeAPI.md#BulkChargePause)       | **Get** /bulkcharge/pause/{code}   | Pause Bulk Charge Batch  |
+| [**BulkChargeResume**](BulkChargeAPI.md#BulkChargeResume)     | **Get** /bulkcharge/resume/{code}  | Resume Bulk Charge Batch |
 
 ## BulkChargeCharges
 
@@ -28,7 +26,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -48,20 +46,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** | Batch code | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          | Batch code                                                                  |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiBulkChargeChargesRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -80,7 +75,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## BulkChargeFetch
 
 > Response BulkChargeFetch(ctx, code).Execute()
@@ -96,7 +90,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -116,20 +110,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** | Batch code | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          | Batch code                                                                  |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiBulkChargeFetchRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -148,7 +139,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## BulkChargeInitiate
 
 > Response BulkChargeInitiate(ctx).Execute()
@@ -164,7 +154,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -189,7 +179,6 @@ This endpoint does not need any parameter.
 
 Other parameters are passed through a pointer to a apiBulkChargeInitiateRequest struct via the builder pattern
 
-
 ### Return type
 
 [**Response**](Response.md)
@@ -207,7 +196,6 @@ Other parameters are passed through a pointer to a apiBulkChargeInitiateRequest 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## BulkChargeList
 
 > Response BulkChargeList(ctx).PerPage(perPage).Page(page).From(from).To(to).Execute()
@@ -224,7 +212,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -247,19 +235,16 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiBulkChargeListRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **perPage** | **int32** | Number of records to fetch per page | 
- **page** | **int32** | The section to retrieve | 
- **from** | **time.Time** | The start date | 
- **to** | **time.Time** | The end date | 
+| Name        | Type          | Description                         | Notes |
+| ----------- | ------------- | ----------------------------------- | ----- |
+| **perPage** | **int32**     | Number of records to fetch per page |
+| **page**    | **int32**     | The section to retrieve             |
+| **from**    | **time.Time** | The start date                      |
+| **to**      | **time.Time** | The end date                        |
 
 ### Return type
 
@@ -278,7 +263,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## BulkChargePause
 
 > Response BulkChargePause(ctx, code).Execute()
@@ -294,7 +278,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -314,20 +298,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** | Batch code | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          | Batch code                                                                  |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiBulkChargePauseRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -346,7 +327,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## BulkChargeResume
 
 > Response BulkChargeResume(ctx, code).Execute()
@@ -362,7 +342,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -382,20 +362,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** | Batch code | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          | Batch code                                                                  |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiBulkChargeResumeRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -413,4 +390,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

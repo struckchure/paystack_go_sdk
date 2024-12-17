@@ -2,22 +2,20 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**TransactionChargeAuthorization**](TransactionAPI.md#TransactionChargeAuthorization) | **Post** /transaction/charge_authorization | Charge Authorization
-[**TransactionCheckAuthorization**](TransactionAPI.md#TransactionCheckAuthorization) | **Post** /transaction/check_authorization | Check Authorization
-[**TransactionDownload**](TransactionAPI.md#TransactionDownload) | **Get** /transaction/export | Export Transactions
-[**TransactionEvent**](TransactionAPI.md#TransactionEvent) | **Get** /transaction/{id}/event | Get Transaction Event
-[**TransactionFetch**](TransactionAPI.md#TransactionFetch) | **Get** /transaction/{id} | Fetch Transaction
-[**TransactionInitialize**](TransactionAPI.md#TransactionInitialize) | **Post** /transaction/initialize | Initialize Transaction
-[**TransactionList**](TransactionAPI.md#TransactionList) | **Get** /transaction | List Transactions
-[**TransactionPartialDebit**](TransactionAPI.md#TransactionPartialDebit) | **Post** /transaction/partial_debit | Partial Debit
-[**TransactionSession**](TransactionAPI.md#TransactionSession) | **Get** /transaction/{id}/session | Get Transaction Session
-[**TransactionTimeline**](TransactionAPI.md#TransactionTimeline) | **Get** /transaction/timeline/{id_or_reference} | Fetch Transaction Timeline
-[**TransactionTotals**](TransactionAPI.md#TransactionTotals) | **Get** /transaction/totals | Transaction Totals
-[**TransactionVerify**](TransactionAPI.md#TransactionVerify) | **Get** /transaction/verify/{reference} | Verify Transaction
-
-
+| Method                                                                                 | HTTP request                                    | Description                |
+| -------------------------------------------------------------------------------------- | ----------------------------------------------- | -------------------------- |
+| [**TransactionChargeAuthorization**](TransactionAPI.md#TransactionChargeAuthorization) | **Post** /transaction/charge_authorization      | Charge Authorization       |
+| [**TransactionCheckAuthorization**](TransactionAPI.md#TransactionCheckAuthorization)   | **Post** /transaction/check_authorization       | Check Authorization        |
+| [**TransactionDownload**](TransactionAPI.md#TransactionDownload)                       | **Get** /transaction/export                     | Export Transactions        |
+| [**TransactionEvent**](TransactionAPI.md#TransactionEvent)                             | **Get** /transaction/{id}/event                 | Get Transaction Event      |
+| [**TransactionFetch**](TransactionAPI.md#TransactionFetch)                             | **Get** /transaction/{id}                       | Fetch Transaction          |
+| [**TransactionInitialize**](TransactionAPI.md#TransactionInitialize)                   | **Post** /transaction/initialize                | Initialize Transaction     |
+| [**TransactionList**](TransactionAPI.md#TransactionList)                               | **Get** /transaction                            | List Transactions          |
+| [**TransactionPartialDebit**](TransactionAPI.md#TransactionPartialDebit)               | **Post** /transaction/partial_debit             | Partial Debit              |
+| [**TransactionSession**](TransactionAPI.md#TransactionSession)                         | **Get** /transaction/{id}/session               | Get Transaction Session    |
+| [**TransactionTimeline**](TransactionAPI.md#TransactionTimeline)                       | **Get** /transaction/timeline/{id_or_reference} | Fetch Transaction Timeline |
+| [**TransactionTotals**](TransactionAPI.md#TransactionTotals)                           | **Get** /transaction/totals                     | Transaction Totals         |
+| [**TransactionVerify**](TransactionAPI.md#TransactionVerify)                           | **Get** /transaction/verify/{reference}         | Verify Transaction         |
 
 ## TransactionChargeAuthorization
 
@@ -34,7 +32,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -64,26 +62,23 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransactionChargeAuthorizationRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **string** | Customer&#39;s email address | 
- **amount** | **int32** | Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR | 
- **authorizationCode** | **string** | Valid authorization code to charge | 
- **reference** | **string** | Unique transaction reference. Only -, ., &#x3D; and alphanumeric characters allowed. | 
- **currency** | **string** | The transaction currency | 
- **metadata** | **string** | Stringified JSON object of custom data | 
- **splitCode** | **string** | The split code of the transaction split | 
- **subaccount** | **string** | The code for the subaccount that owns the payment | 
- **transactionCharge** | **string** | A flat fee to charge the subaccount for a transaction.  This overrides the split percentage set when the subaccount was created | 
- **bearer** | **string** | The beare of the transaction charge | 
- **queue** | **bool** | If you are making a scheduled charge call, it is a good idea to queue them so the processing system does not get overloaded causing transaction processing errors. | 
+| Name                  | Type       | Description                                                                                                                                                        | Notes |
+| --------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| **email**             | **string** | Customer&#39;s email address                                                                                                                                       |
+| **amount**            | **int32**  | Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR                                                            |
+| **authorizationCode** | **string** | Valid authorization code to charge                                                                                                                                 |
+| **reference**         | **string** | Unique transaction reference. Only -, ., &#x3D; and alphanumeric characters allowed.                                                                               |
+| **currency**          | **string** | The transaction currency                                                                                                                                           |
+| **metadata**          | **string** | Stringified JSON object of custom data                                                                                                                             |
+| **splitCode**         | **string** | The split code of the transaction split                                                                                                                            |
+| **subaccount**        | **string** | The code for the subaccount that owns the payment                                                                                                                  |
+| **transactionCharge** | **string** | A flat fee to charge the subaccount for a transaction. This overrides the split percentage set when the subaccount was created                                     |
+| **bearer**            | **string** | The beare of the transaction charge                                                                                                                                |
+| **queue**             | **bool**   | If you are making a scheduled charge call, it is a good idea to queue them so the processing system does not get overloaded causing transaction processing errors. |
 
 ### Return type
 
@@ -102,7 +97,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## TransactionCheckAuthorization
 
 > Response TransactionCheckAuthorization(ctx).Email(email).Amount(amount).AuthorizationCode(authorizationCode).Currency(currency).Execute()
@@ -118,7 +112,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -141,19 +135,16 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransactionCheckAuthorizationRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **string** | Customer&#39;s email address | 
- **amount** | **int32** | Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR | 
- **authorizationCode** | **string** | Valid authorization code to charge | 
- **currency** | **string** | The transaction currency | 
+| Name                  | Type       | Description                                                                                             | Notes |
+| --------------------- | ---------- | ------------------------------------------------------------------------------------------------------- | ----- |
+| **email**             | **string** | Customer&#39;s email address                                                                            |
+| **amount**            | **int32**  | Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR |
+| **authorizationCode** | **string** | Valid authorization code to charge                                                                      |
+| **currency**          | **string** | The transaction currency                                                                                |
 
 ### Return type
 
@@ -172,7 +163,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## TransactionDownload
 
 > Response TransactionDownload(ctx).PerPage(perPage).Page(page).From(from).To(to).Execute()
@@ -189,7 +179,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -212,19 +202,16 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransactionDownloadRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **perPage** | **int32** | Number of records to fetch per page | 
- **page** | **int32** | The section to retrieve | 
- **from** | **time.Time** | The start date | 
- **to** | **time.Time** | The end date | 
+| Name        | Type          | Description                         | Notes |
+| ----------- | ------------- | ----------------------------------- | ----- |
+| **perPage** | **int32**     | Number of records to fetch per page |
+| **page**    | **int32**     | The section to retrieve             |
+| **from**    | **time.Time** | The start date                      |
+| **to**      | **time.Time** | The end date                        |
 
 ### Return type
 
@@ -242,7 +229,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-
 
 ## TransactionEvent
 
@@ -259,11 +245,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -279,20 +265,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransactionEventRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -311,14 +294,11 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## TransactionFetch
 
 > Response TransactionFetch(ctx, id).Execute()
 
 Fetch Transaction
-
-
 
 ### Example
 
@@ -329,7 +309,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -349,20 +329,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | The ID of the transaction to fetch | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          | The ID of the transaction to fetch                                          |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransactionFetchRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -381,14 +358,11 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## TransactionInitialize
 
 > Response TransactionInitialize(ctx).Email(email).Amount(amount).Currency(currency).Reference(reference).CallbackUrl(callbackUrl).Plan(plan).InvoiceLimit(invoiceLimit).Metadata(metadata).Channels(channels).SplitCode(splitCode).Subaccount(subaccount).TransactionCharge(transactionCharge).Bearer(bearer).Execute()
 
 Initialize Transaction
-
-
 
 ### Example
 
@@ -399,7 +373,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -431,28 +405,25 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransactionInitializeRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **string** | Customer&#39;s email address | 
- **amount** | **int32** | Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR | 
- **currency** | **string** | The transaction currency | 
- **reference** | **string** | Unique transaction reference. Only -, ., &#x3D; and alphanumeric characters allowed. | 
- **callbackUrl** | **string** | Fully qualified url, e.g. https://example.com/ . Use this to override the callback url provided on the dashboard for this transaction | 
- **plan** | **string** | If transaction is to create a subscription to a predefined plan, provide plan code here.  This would invalidate the value provided in amount | 
- **invoiceLimit** | **int32** | Number of times to charge customer during subscription to plan | 
- **metadata** | **string** | Stringified JSON object of custom data | 
- **channels** | **[]string** | An array of payment channels to control what channels you want to make available to the user to make a payment with | 
- **splitCode** | **string** | The split code of the transaction split | 
- **subaccount** | **string** | The code for the subaccount that owns the payment | 
- **transactionCharge** | **string** | A flat fee to charge the subaccount for a transaction.  This overrides the split percentage set when the subaccount was created | 
- **bearer** | **string** | The beare of the transaction charge | 
+| Name                  | Type         | Description                                                                                                                                 | Notes |
+| --------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **email**             | **string**   | Customer&#39;s email address                                                                                                                |
+| **amount**            | **int32**    | Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR                                     |
+| **currency**          | **string**   | The transaction currency                                                                                                                    |
+| **reference**         | **string**   | Unique transaction reference. Only -, ., &#x3D; and alphanumeric characters allowed.                                                        |
+| **callbackUrl**       | **string**   | Fully qualified url, e.g. https://example.com/ . Use this to override the callback url provided on the dashboard for this transaction       |
+| **plan**              | **string**   | If transaction is to create a subscription to a predefined plan, provide plan code here. This would invalidate the value provided in amount |
+| **invoiceLimit**      | **int32**    | Number of times to charge customer during subscription to plan                                                                              |
+| **metadata**          | **string**   | Stringified JSON object of custom data                                                                                                      |
+| **channels**          | **[]string** | An array of payment channels to control what channels you want to make available to the user to make a payment with                         |
+| **splitCode**         | **string**   | The split code of the transaction split                                                                                                     |
+| **subaccount**        | **string**   | The code for the subaccount that owns the payment                                                                                           |
+| **transactionCharge** | **string**   | A flat fee to charge the subaccount for a transaction. This overrides the split percentage set when the subaccount was created              |
+| **bearer**            | **string**   | The beare of the transaction charge                                                                                                         |
 
 ### Return type
 
@@ -471,14 +442,11 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## TransactionList
 
 > Response TransactionList(ctx).PerPage(perPage).Page(page).From(from).To(to).Execute()
 
 List Transactions
-
-
 
 ### Example
 
@@ -490,7 +458,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -513,19 +481,16 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransactionListRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **perPage** | **int32** | Number of records to fetch per page | 
- **page** | **int32** | The section to retrieve | 
- **from** | **time.Time** | The start date | 
- **to** | **time.Time** | The end date | 
+| Name        | Type          | Description                         | Notes |
+| ----------- | ------------- | ----------------------------------- | ----- |
+| **perPage** | **int32**     | Number of records to fetch per page |
+| **page**    | **int32**     | The section to retrieve             |
+| **from**    | **time.Time** | The start date                      |
+| **to**      | **time.Time** | The end date                        |
 
 ### Return type
 
@@ -544,7 +509,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## TransactionPartialDebit
 
 > Response TransactionPartialDebit(ctx).Email(email).Amount(amount).AuthorizationCode(authorizationCode).Currency(currency).Reference(reference).AtLeast(atLeast).Execute()
@@ -560,7 +524,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -585,21 +549,18 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransactionPartialDebitRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **string** | Customer&#39;s email address | 
- **amount** | **int32** | Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR | 
- **authorizationCode** | **string** | Valid authorization code to charge | 
- **currency** | **string** | The transaction currency | 
- **reference** | **string** | Unique transaction reference. Only -, ., &#x3D; and alphanumeric characters allowed. | 
- **atLeast** | **string** | Minimum amount to charge | 
+| Name                  | Type       | Description                                                                                             | Notes |
+| --------------------- | ---------- | ------------------------------------------------------------------------------------------------------- | ----- |
+| **email**             | **string** | Customer&#39;s email address                                                                            |
+| **amount**            | **int32**  | Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR |
+| **authorizationCode** | **string** | Valid authorization code to charge                                                                      |
+| **currency**          | **string** | The transaction currency                                                                                |
+| **reference**         | **string** | Unique transaction reference. Only -, ., &#x3D; and alphanumeric characters allowed.                    |
+| **atLeast**           | **string** | Minimum amount to charge                                                                                |
 
 ### Return type
 
@@ -618,7 +579,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## TransactionSession
 
 > Response TransactionSession(ctx, id).Execute()
@@ -634,11 +594,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -654,20 +614,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransactionSessionRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -686,14 +643,11 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## TransactionTimeline
 
 > Response TransactionTimeline(ctx, idOrReference).Execute()
 
 Fetch Transaction Timeline
-
-
 
 ### Example
 
@@ -704,11 +658,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	idOrReference := "idOrReference_example" // string | 
+	idOrReference := "idOrReference_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -724,20 +678,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**idOrReference** | **string** |  | 
+| Name              | Type                | Description                                                                 | Notes |
+| ----------------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**           | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **idOrReference** | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransactionTimelineRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -756,14 +707,11 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## TransactionTotals
 
 > Response TransactionTotals(ctx).PerPage(perPage).Page(page).From(from).To(to).Execute()
 
 Transaction Totals
-
-
 
 ### Example
 
@@ -775,7 +723,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -798,19 +746,16 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransactionTotalsRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **perPage** | **int32** | Number of records to fetch per page | 
- **page** | **int32** | The section to retrieve | 
- **from** | **time.Time** | The start date | 
- **to** | **time.Time** | The end date | 
+| Name        | Type          | Description                         | Notes |
+| ----------- | ------------- | ----------------------------------- | ----- |
+| **perPage** | **int32**     | Number of records to fetch per page |
+| **page**    | **int32**     | The section to retrieve             |
+| **from**    | **time.Time** | The start date                      |
+| **to**      | **time.Time** | The end date                        |
 
 ### Return type
 
@@ -829,14 +774,11 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## TransactionVerify
 
 > Response TransactionVerify(ctx, reference).Execute()
 
 Verify Transaction
-
-
 
 ### Example
 
@@ -847,7 +789,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -867,20 +809,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**reference** | **string** | The transaction reference to verify | 
+| Name          | Type                | Description                                                                 | Notes |
+| ------------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**       | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **reference** | **string**          | The transaction reference to verify                                         |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransactionVerifyRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -898,4 +837,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

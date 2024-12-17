@@ -2,12 +2,10 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**SettlementsFetch**](SettlementAPI.md#SettlementsFetch) | **Get** /settlement | Fetch Settlements
-[**SettlementsTransaction**](SettlementAPI.md#SettlementsTransaction) | **Get** /settlement/{id}/transaction | Settlement Transactions
-
-
+| Method                                                                | HTTP request                         | Description             |
+| --------------------------------------------------------------------- | ------------------------------------ | ----------------------- |
+| [**SettlementsFetch**](SettlementAPI.md#SettlementsFetch)             | **Get** /settlement                  | Fetch Settlements       |
+| [**SettlementsTransaction**](SettlementAPI.md#SettlementsTransaction) | **Get** /settlement/{id}/transaction | Settlement Transactions |
 
 ## SettlementsFetch
 
@@ -24,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -45,17 +43,14 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSettlementsFetchRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **perPage** | **int32** |  | 
- **page** | **int32** |  | 
+| Name        | Type      | Description | Notes |
+| ----------- | --------- | ----------- | ----- |
+| **perPage** | **int32** |             |
+| **page**    | **int32** |             |
 
 ### Return type
 
@@ -73,7 +68,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-
 
 ## SettlementsTransaction
 
@@ -90,11 +84,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -110,20 +104,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSettlementsTransactionRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -141,4 +132,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

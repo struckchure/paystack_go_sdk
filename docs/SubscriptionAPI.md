@@ -2,17 +2,15 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**SubscriptionCreate**](SubscriptionAPI.md#SubscriptionCreate) | **Post** /subscription | Create Subscription
-[**SubscriptionDisable**](SubscriptionAPI.md#SubscriptionDisable) | **Post** /subscription/disable | Disable Subscription
-[**SubscriptionEnable**](SubscriptionAPI.md#SubscriptionEnable) | **Post** /subscription/enable | Enable Subscription
-[**SubscriptionFetch**](SubscriptionAPI.md#SubscriptionFetch) | **Get** /subscription/{code} | Fetch Subscription
-[**SubscriptionList**](SubscriptionAPI.md#SubscriptionList) | **Get** /subscription | List Subscriptions
-[**SubscriptionManageEmail**](SubscriptionAPI.md#SubscriptionManageEmail) | **Post** /subscription/{code}/manage/email | Send Update Subscription Link
-[**SubscriptionManageLink**](SubscriptionAPI.md#SubscriptionManageLink) | **Get** /subscription/{code}/manage/link | Generate Update Subscription Link
-
-
+| Method                                                                    | HTTP request                               | Description                       |
+| ------------------------------------------------------------------------- | ------------------------------------------ | --------------------------------- |
+| [**SubscriptionCreate**](SubscriptionAPI.md#SubscriptionCreate)           | **Post** /subscription                     | Create Subscription               |
+| [**SubscriptionDisable**](SubscriptionAPI.md#SubscriptionDisable)         | **Post** /subscription/disable             | Disable Subscription              |
+| [**SubscriptionEnable**](SubscriptionAPI.md#SubscriptionEnable)           | **Post** /subscription/enable              | Enable Subscription               |
+| [**SubscriptionFetch**](SubscriptionAPI.md#SubscriptionFetch)             | **Get** /subscription/{code}               | Fetch Subscription                |
+| [**SubscriptionList**](SubscriptionAPI.md#SubscriptionList)               | **Get** /subscription                      | List Subscriptions                |
+| [**SubscriptionManageEmail**](SubscriptionAPI.md#SubscriptionManageEmail) | **Post** /subscription/{code}/manage/email | Send Update Subscription Link     |
+| [**SubscriptionManageLink**](SubscriptionAPI.md#SubscriptionManageLink)   | **Get** /subscription/{code}/manage/link   | Generate Update Subscription Link |
 
 ## SubscriptionCreate
 
@@ -30,7 +28,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -53,19 +51,16 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSubscriptionCreateRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customer** | **string** | Customer&#39;s email address or customer code | 
- **plan** | **string** | Plan code | 
- **authorization** | **string** | If customer has multiple authorizations, you can set the desired authorization you wish to use for this subscription here.  If this is not supplied, the customer&#39;s most recent authorization would be used | 
- **startDate** | **time.Time** | Set the date for the first debit. (ISO 8601 format) e.g. 2017-05-16T00:30:13+01:00 | 
+| Name              | Type          | Description                                                                                                                                                                                                    | Notes |
+| ----------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **customer**      | **string**    | Customer&#39;s email address or customer code                                                                                                                                                                  |
+| **plan**          | **string**    | Plan code                                                                                                                                                                                                      |
+| **authorization** | **string**    | If customer has multiple authorizations, you can set the desired authorization you wish to use for this subscription here. If this is not supplied, the customer&#39;s most recent authorization would be used |
+| **startDate**     | **time.Time** | Set the date for the first debit. (ISO 8601 format) e.g. 2017-05-16T00:30:13+01:00                                                                                                                             |
 
 ### Return type
 
@@ -84,7 +79,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## SubscriptionDisable
 
 > Response SubscriptionDisable(ctx).Code(code).Token(token).Execute()
@@ -100,7 +94,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -121,17 +115,14 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSubscriptionDisableRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **code** | **string** | Subscription code | 
- **token** | **string** | Email token | 
+| Name      | Type       | Description       | Notes |
+| --------- | ---------- | ----------------- | ----- |
+| **code**  | **string** | Subscription code |
+| **token** | **string** | Email token       |
 
 ### Return type
 
@@ -150,7 +141,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## SubscriptionEnable
 
 > Response SubscriptionEnable(ctx).Code(code).Token(token).Execute()
@@ -166,7 +156,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -187,17 +177,14 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSubscriptionEnableRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **code** | **string** | Subscription code | 
- **token** | **string** | Email token | 
+| Name      | Type       | Description       | Notes |
+| --------- | ---------- | ----------------- | ----- |
+| **code**  | **string** | Subscription code |
+| **token** | **string** | Email token       |
 
 ### Return type
 
@@ -216,7 +203,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## SubscriptionFetch
 
 > Response SubscriptionFetch(ctx, code).Execute()
@@ -232,11 +218,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	code := "code_example" // string | 
+	code := "code_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -252,20 +238,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** |  | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSubscriptionFetchRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -284,7 +267,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## SubscriptionList
 
 > Response SubscriptionList(ctx).PerPage(perPage).Page(page).Plan(plan).Customer(customer).From(from).To(to).Execute()
@@ -301,7 +283,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -326,21 +308,18 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSubscriptionListRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **perPage** | **int32** | Number of records to fetch per page | 
- **page** | **int32** | The section to retrieve | 
- **plan** | **string** | Plan ID | 
- **customer** | **string** | Customer ID | 
- **from** | **time.Time** | The start date | 
- **to** | **time.Time** | The end date | 
+| Name         | Type          | Description                         | Notes |
+| ------------ | ------------- | ----------------------------------- | ----- |
+| **perPage**  | **int32**     | Number of records to fetch per page |
+| **page**     | **int32**     | The section to retrieve             |
+| **plan**     | **string**    | Plan ID                             |
+| **customer** | **string**    | Customer ID                         |
+| **from**     | **time.Time** | The start date                      |
+| **to**       | **time.Time** | The end date                        |
 
 ### Return type
 
@@ -358,7 +337,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-
 
 ## SubscriptionManageEmail
 
@@ -375,11 +353,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	code := "code_example" // string | 
+	code := "code_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -395,20 +373,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** |  | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSubscriptionManageEmailRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -426,7 +401,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-
 
 ## SubscriptionManageLink
 
@@ -443,11 +417,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	code := "code_example" // string | 
+	code := "code_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -463,20 +437,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** |  | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSubscriptionManageLinkRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -494,4 +465,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

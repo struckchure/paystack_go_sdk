@@ -2,13 +2,11 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**RefundCreate**](RefundAPI.md#RefundCreate) | **Post** /refund | Create Refund
-[**RefundFetch**](RefundAPI.md#RefundFetch) | **Get** /refund/{id} | Fetch Refund
-[**RefundList**](RefundAPI.md#RefundList) | **Get** /refund | List Refunds
-
-
+| Method                                        | HTTP request         | Description   |
+| --------------------------------------------- | -------------------- | ------------- |
+| [**RefundCreate**](RefundAPI.md#RefundCreate) | **Post** /refund     | Create Refund |
+| [**RefundFetch**](RefundAPI.md#RefundFetch)   | **Get** /refund/{id} | Fetch Refund  |
+| [**RefundList**](RefundAPI.md#RefundList)     | **Get** /refund      | List Refunds  |
 
 ## RefundCreate
 
@@ -25,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -49,20 +47,17 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiRefundCreateRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **transaction** | **string** | Transaction reference or id | 
- **amount** | **int32** | Amount ( in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR ) to be refunded to the customer.  Amount cannot be more than the original transaction amount | 
- **currency** | **string** | Three-letter ISO currency. Allowed values are NGN, GHS, ZAR or USD | 
- **customerNote** | **string** | Customer reason | 
- **merchantNote** | **string** | Merchant reason | 
+| Name             | Type       | Description                                                                                                                                                                                  | Notes |
+| ---------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **transaction**  | **string** | Transaction reference or id                                                                                                                                                                  |
+| **amount**       | **int32**  | Amount ( in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR ) to be refunded to the customer. Amount cannot be more than the original transaction amount |
+| **currency**     | **string** | Three-letter ISO currency. Allowed values are NGN, GHS, ZAR or USD                                                                                                                           |
+| **customerNote** | **string** | Customer reason                                                                                                                                                                              |
+| **merchantNote** | **string** | Merchant reason                                                                                                                                                                              |
 
 ### Return type
 
@@ -81,7 +76,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## RefundFetch
 
 > Response RefundFetch(ctx, id).Execute()
@@ -97,11 +91,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -117,20 +111,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiRefundFetchRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -149,7 +140,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## RefundList
 
 > Response RefundList(ctx).PerPage(perPage).Page(page).From(from).To(to).Execute()
@@ -166,7 +156,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -189,19 +179,16 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiRefundListRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **perPage** | **int32** | Number of records to fetch per page | 
- **page** | **int32** | The section to retrieve | 
- **from** | **time.Time** | The start date | 
- **to** | **time.Time** | The end date | 
+| Name        | Type          | Description                         | Notes |
+| ----------- | ------------- | ----------------------------------- | ----- |
+| **perPage** | **int32**     | Number of records to fetch per page |
+| **page**    | **int32**     | The section to retrieve             |
+| **from**    | **time.Time** | The start date                      |
+| **to**      | **time.Time** | The end date                        |
 
 ### Return type
 
@@ -219,4 +206,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

@@ -2,20 +2,16 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**BalanceFetch**](BalanceAPI.md#BalanceFetch) | **Get** /balance | Fetch Balance
-[**BalanceLedger**](BalanceAPI.md#BalanceLedger) | **Get** /balance/ledger | Balance Ledger
-
-
+| Method                                           | HTTP request            | Description    |
+| ------------------------------------------------ | ----------------------- | -------------- |
+| [**BalanceFetch**](BalanceAPI.md#BalanceFetch)   | **Get** /balance        | Fetch Balance  |
+| [**BalanceLedger**](BalanceAPI.md#BalanceLedger) | **Get** /balance/ledger | Balance Ledger |
 
 ## BalanceFetch
 
 > Response BalanceFetch(ctx).Execute()
 
 Fetch Balance
-
-
 
 ### Example
 
@@ -26,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -51,7 +47,6 @@ This endpoint does not need any parameter.
 
 Other parameters are passed through a pointer to a apiBalanceFetchRequest struct via the builder pattern
 
-
 ### Return type
 
 [**Response**](Response.md)
@@ -69,7 +64,6 @@ Other parameters are passed through a pointer to a apiBalanceFetchRequest struct
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## BalanceLedger
 
 > Response BalanceLedger(ctx).PerPage(perPage).Page(page).From(from).To(to).Execute()
@@ -86,7 +80,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -109,19 +103,16 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiBalanceLedgerRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **perPage** | **int32** | Number of records to fetch per page | 
- **page** | **int32** | The section to retrieve | 
- **from** | **time.Time** | The start date | 
- **to** | **time.Time** | The end date | 
+| Name        | Type          | Description                         | Notes |
+| ----------- | ------------- | ----------------------------------- | ----- |
+| **perPage** | **int32**     | Number of records to fetch per page |
+| **page**    | **int32**     | The section to retrieve             |
+| **from**    | **time.Time** | The start date                      |
+| **to**      | **time.Time** | The end date                        |
 
 ### Return type
 
@@ -139,4 +130,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

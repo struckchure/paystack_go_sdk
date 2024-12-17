@@ -11,10 +11,11 @@ package paystack
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func Test_paystack_ProductAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_paystack_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductCreate(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_paystack_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductDelete", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id string
 
@@ -50,7 +51,7 @@ func Test_paystack_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductFetch", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id string
 
@@ -64,7 +65,7 @@ func Test_paystack_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ProductAPI.ProductList(context.Background()).Execute()
 
@@ -76,7 +77,7 @@ func Test_paystack_ProductAPIService(t *testing.T) {
 
 	t.Run("Test ProductAPIService ProductUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id string
 

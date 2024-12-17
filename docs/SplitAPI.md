@@ -2,16 +2,14 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**SplitAddSubaccount**](SplitAPI.md#SplitAddSubaccount) | **Post** /split/{id}/subaccount/add | Add Subaccount to Split
-[**SplitCreate**](SplitAPI.md#SplitCreate) | **Post** /split | Create Split
-[**SplitFetch**](SplitAPI.md#SplitFetch) | **Get** /split/{id} | Fetch Split
-[**SplitList**](SplitAPI.md#SplitList) | **Get** /split | List/Search Splits
-[**SplitRemoveSubaccount**](SplitAPI.md#SplitRemoveSubaccount) | **Post** /split/{id}/subaccount/remove | Remove Subaccount from split
-[**SplitUpdate**](SplitAPI.md#SplitUpdate) | **Put** /split/{id} | Update Split
-
-
+| Method                                                         | HTTP request                           | Description                  |
+| -------------------------------------------------------------- | -------------------------------------- | ---------------------------- |
+| [**SplitAddSubaccount**](SplitAPI.md#SplitAddSubaccount)       | **Post** /split/{id}/subaccount/add    | Add Subaccount to Split      |
+| [**SplitCreate**](SplitAPI.md#SplitCreate)                     | **Post** /split                        | Create Split                 |
+| [**SplitFetch**](SplitAPI.md#SplitFetch)                       | **Get** /split/{id}                    | Fetch Split                  |
+| [**SplitList**](SplitAPI.md#SplitList)                         | **Get** /split                         | List/Search Splits           |
+| [**SplitRemoveSubaccount**](SplitAPI.md#SplitRemoveSubaccount) | **Post** /split/{id}/subaccount/remove | Remove Subaccount from split |
+| [**SplitUpdate**](SplitAPI.md#SplitUpdate)                     | **Put** /split/{id}                    | Update Split                 |
 
 ## SplitAddSubaccount
 
@@ -28,11 +26,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	id := "application/json" // string | 
+	id := "application/json" // string |
 	subaccount := "subaccount_example" // string | Subaccount code of the customer or partner (optional)
 	share := "share_example" // string | The percentage or flat quota of the customer or partner (optional)
 
@@ -50,22 +48,20 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSplitAddSubaccountRequest struct via the builder pattern
 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **subaccount** | **string** | Subaccount code of the customer or partner | 
- **share** | **string** | The percentage or flat quota of the customer or partner | 
+**subaccount** | **string** | Subaccount code of the customer or partner |
+**share** | **string** | The percentage or flat quota of the customer or partner |
 
 ### Return type
 
@@ -84,10 +80,9 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## SplitCreate
 
-> Response SplitCreate(ctx).Name(name).Type_(type_).Subaccounts(subaccounts).Currency(currency).BearerType(bearerType).BearerSubaccount(bearerSubaccount).Execute()
+> Response SplitCreate(ctx).Name(name).Type*(type*).Subaccounts(subaccounts).Currency(currency).BearerType(bearerType).BearerSubaccount(bearerSubaccount).Execute()
 
 Create Split
 
@@ -100,7 +95,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -125,21 +120,18 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSplitCreateRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **string** | Name of the transaction split | 
- **type_** | **string** | The type of transaction split you want to create. | 
- **subaccounts** | [**[]SplitSubaccounts**](SplitSubaccounts.md) | A list of object containing subaccount code and number of shares | 
- **currency** | **string** | The transaction currency | 
- **bearerType** | **string** | This allows you specify how the transaction charge should be processed | 
- **bearerSubaccount** | **string** | This is the subaccount code of the customer or partner that would bear the transaction charge if you specified subaccount as the bearer type | 
+| Name                 | Type                                          | Description                                                                                                                                  | Notes |
+| -------------------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **name**             | **string**                                    | Name of the transaction split                                                                                                                |
+| **type\_**           | **string**                                    | The type of transaction split you want to create.                                                                                            |
+| **subaccounts**      | [**[]SplitSubaccounts**](SplitSubaccounts.md) | A list of object containing subaccount code and number of shares                                                                             |
+| **currency**         | **string**                                    | The transaction currency                                                                                                                     |
+| **bearerType**       | **string**                                    | This allows you specify how the transaction charge should be processed                                                                       |
+| **bearerSubaccount** | **string**                                    | This is the subaccount code of the customer or partner that would bear the transaction charge if you specified subaccount as the bearer type |
 
 ### Return type
 
@@ -158,7 +150,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## SplitFetch
 
 > Response SplitFetch(ctx, id).Execute()
@@ -174,11 +165,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -194,20 +185,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSplitFetchRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -226,7 +214,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## SplitList
 
 > Response SplitList(ctx).Name(name).Active(active).SortBy(sortBy).From(from).To(to).PerPage(perPage).Page(page).Execute()
@@ -242,7 +229,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -268,22 +255,19 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSplitListRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **string** |  | 
- **active** | **string** |  | 
- **sortBy** | **string** |  | 
- **from** | **string** |  | 
- **to** | **string** |  | 
- **perPage** | **string** |  | 
- **page** | **string** |  | 
+| Name        | Type       | Description | Notes |
+| ----------- | ---------- | ----------- | ----- |
+| **name**    | **string** |             |
+| **active**  | **string** |             |
+| **sortBy**  | **string** |             |
+| **from**    | **string** |             |
+| **to**      | **string** |             |
+| **perPage** | **string** |             |
+| **page**    | **string** |             |
 
 ### Return type
 
@@ -302,7 +286,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## SplitRemoveSubaccount
 
 > Response SplitRemoveSubaccount(ctx, id).Subaccount(subaccount).Share(share).Execute()
@@ -318,11 +301,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string |
 	subaccount := "subaccount_example" // string | Subaccount code of the customer or partner (optional)
 	share := "share_example" // string | The percentage or flat quota of the customer or partner (optional)
 
@@ -340,22 +323,20 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSplitRemoveSubaccountRequest struct via the builder pattern
 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **subaccount** | **string** | Subaccount code of the customer or partner | 
- **share** | **string** | The percentage or flat quota of the customer or partner | 
+**subaccount** | **string** | Subaccount code of the customer or partner |
+**share** | **string** | The percentage or flat quota of the customer or partner |
 
 ### Return type
 
@@ -374,7 +355,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## SplitUpdate
 
 > Response SplitUpdate(ctx, id).Name(name).Active(active).BearerType(bearerType).BearerSubaccount(bearerSubaccount).Execute()
@@ -390,11 +370,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string |
 	name := "name_example" // string | Name of the transaction split (optional)
 	active := true // bool | Toggle status of split. When true, the split is active, else it's inactive (optional)
 	bearerType := "bearerType_example" // string | This allows you specify how the transaction charge should be processed (optional)
@@ -414,24 +394,22 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSplitUpdateRequest struct via the builder pattern
 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **name** | **string** | Name of the transaction split | 
- **active** | **bool** | Toggle status of split. When true, the split is active, else it&#39;s inactive | 
- **bearerType** | **string** | This allows you specify how the transaction charge should be processed | 
- **bearerSubaccount** | **string** | This is the subaccount code of the customer or partner that would bear the transaction charge if you specified subaccount as the bearer type | 
+**name** | **string** | Name of the transaction split |
+**active** | **bool** | Toggle status of split. When true, the split is active, else it&#39;s inactive |
+**bearerType** | **string** | This allows you specify how the transaction charge should be processed |
+**bearerSubaccount** | **string** | This is the subaccount code of the customer or partner that would bear the transaction charge if you specified subaccount as the bearer type |
 
 ### Return type
 
@@ -449,4 +427,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

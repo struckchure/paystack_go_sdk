@@ -2,14 +2,12 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**SubaccountCreate**](SubaccountAPI.md#SubaccountCreate) | **Post** /subaccount | Create Subaccount
-[**SubaccountFetch**](SubaccountAPI.md#SubaccountFetch) | **Get** /subaccount/{code} | Fetch Subaccount
-[**SubaccountList**](SubaccountAPI.md#SubaccountList) | **Get** /subaccount | List Subaccounts
-[**SubaccountUpdate**](SubaccountAPI.md#SubaccountUpdate) | **Put** /subaccount/{code} | Update Subaccount
-
-
+| Method                                                    | HTTP request               | Description       |
+| --------------------------------------------------------- | -------------------------- | ----------------- |
+| [**SubaccountCreate**](SubaccountAPI.md#SubaccountCreate) | **Post** /subaccount       | Create Subaccount |
+| [**SubaccountFetch**](SubaccountAPI.md#SubaccountFetch)   | **Get** /subaccount/{code} | Fetch Subaccount  |
+| [**SubaccountList**](SubaccountAPI.md#SubaccountList)     | **Get** /subaccount        | List Subaccounts  |
+| [**SubaccountUpdate**](SubaccountAPI.md#SubaccountUpdate) | **Put** /subaccount/{code} | Update Subaccount |
 
 ## SubaccountCreate
 
@@ -26,7 +24,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -54,24 +52,21 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSubaccountCreateRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **businessName** | **string** | Name of business for subaccount | 
- **settlementBank** | **string** | Bank code for the bank. You can get the list of Bank Codes by calling the List Banks endpoint. | 
- **accountNumber** | **string** | Bank account number | 
- **percentageCharge** | **float32** | Customer&#39;s phone number | 
- **description** | **string** | A description for this subaccount | 
- **primaryContactEmail** | **string** | A contact email for the subaccount | 
- **primaryContactName** | **string** | The name of the contact person for this subaccount | 
- **primaryContactPhone** | **string** | A phone number to call for this subaccount | 
- **metadata** | **string** | Stringified JSON object of custom data | 
+| Name                    | Type        | Description                                                                                    | Notes |
+| ----------------------- | ----------- | ---------------------------------------------------------------------------------------------- | ----- |
+| **businessName**        | **string**  | Name of business for subaccount                                                                |
+| **settlementBank**      | **string**  | Bank code for the bank. You can get the list of Bank Codes by calling the List Banks endpoint. |
+| **accountNumber**       | **string**  | Bank account number                                                                            |
+| **percentageCharge**    | **float32** | Customer&#39;s phone number                                                                    |
+| **description**         | **string**  | A description for this subaccount                                                              |
+| **primaryContactEmail** | **string**  | A contact email for the subaccount                                                             |
+| **primaryContactName**  | **string**  | The name of the contact person for this subaccount                                             |
+| **primaryContactPhone** | **string**  | A phone number to call for this subaccount                                                     |
+| **metadata**            | **string**  | Stringified JSON object of custom data                                                         |
 
 ### Return type
 
@@ -90,7 +85,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## SubaccountFetch
 
 > Response SubaccountFetch(ctx, code).Execute()
@@ -106,11 +100,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	code := "code_example" // string | 
+	code := "code_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -126,20 +120,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** |  | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSubaccountFetchRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -158,7 +149,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## SubaccountList
 
 > Response SubaccountList(ctx).PerPage(perPage).Page(page).From(from).To(to).Execute()
@@ -175,7 +165,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -198,19 +188,16 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSubaccountListRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **perPage** | **int32** | Number of records to fetch per page | 
- **page** | **int32** | The section to retrieve | 
- **from** | **time.Time** | The start date | 
- **to** | **time.Time** | The end date | 
+| Name        | Type          | Description                         | Notes |
+| ----------- | ------------- | ----------------------------------- | ----- |
+| **perPage** | **int32**     | Number of records to fetch per page |
+| **page**    | **int32**     | The section to retrieve             |
+| **from**    | **time.Time** | The start date                      |
+| **to**      | **time.Time** | The end date                        |
 
 ### Return type
 
@@ -229,7 +216,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## SubaccountUpdate
 
 > Response SubaccountUpdate(ctx, code).BusinessName(businessName).SettlementBank(settlementBank).AccountNumber(accountNumber).Active(active).PercentageCharge(percentageCharge).Description(description).PrimaryContactEmail(primaryContactEmail).PrimaryContactName(primaryContactName).PrimaryContactPhone(primaryContactPhone).Metadata(metadata).Execute()
@@ -245,11 +231,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	code := "code_example" // string | 
+	code := "code_example" // string |
 	businessName := "businessName_example" // string | Name of business for subaccount (optional)
 	settlementBank := "settlementBank_example" // string | Bank code for the bank. You can get the list of Bank Codes by calling the List Banks endpoint. (optional)
 	accountNumber := "accountNumber_example" // string | Bank account number (optional)
@@ -275,30 +261,28 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** |  | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiSubaccountUpdateRequest struct via the builder pattern
 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **businessName** | **string** | Name of business for subaccount | 
- **settlementBank** | **string** | Bank code for the bank. You can get the list of Bank Codes by calling the List Banks endpoint. | 
- **accountNumber** | **string** | Bank account number | 
- **active** | **bool** | Activate or deactivate a subaccount | 
- **percentageCharge** | **float32** | Customer&#39;s phone number | 
- **description** | **string** | A description for this subaccount | 
- **primaryContactEmail** | **string** | A contact email for the subaccount | 
- **primaryContactName** | **string** | The name of the contact person for this subaccount | 
- **primaryContactPhone** | **string** | A phone number to call for this subaccount | 
- **metadata** | **string** | Stringified JSON object of custom data | 
+**businessName** | **string** | Name of business for subaccount |
+**settlementBank** | **string** | Bank code for the bank. You can get the list of Bank Codes by calling the List Banks endpoint. |
+**accountNumber** | **string** | Bank account number |
+**active** | **bool** | Activate or deactivate a subaccount |
+**percentageCharge** | **float32** | Customer&#39;s phone number |
+**description** | **string** | A description for this subaccount |
+**primaryContactEmail** | **string** | A contact email for the subaccount |
+**primaryContactName** | **string** | The name of the contact person for this subaccount |
+**primaryContactPhone** | **string** | A phone number to call for this subaccount |
+**metadata** | **string** | Stringified JSON object of custom data |
 
 ### Return type
 
@@ -316,4 +300,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

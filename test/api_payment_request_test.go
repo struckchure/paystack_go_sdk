@@ -11,10 +11,11 @@ package paystack
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func Test_paystack_PaymentRequestAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_paystack_PaymentRequestAPIService(t *testing.T) {
 
 	t.Run("Test PaymentRequestAPIService PaymentRequestArchive", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id string
 
@@ -38,7 +39,7 @@ func Test_paystack_PaymentRequestAPIService(t *testing.T) {
 
 	t.Run("Test PaymentRequestAPIService PaymentRequestCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.PaymentRequestAPI.PaymentRequestCreate(context.Background()).Execute()
 
@@ -50,7 +51,7 @@ func Test_paystack_PaymentRequestAPIService(t *testing.T) {
 
 	t.Run("Test PaymentRequestAPIService PaymentRequestFetch", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id string
 
@@ -64,7 +65,7 @@ func Test_paystack_PaymentRequestAPIService(t *testing.T) {
 
 	t.Run("Test PaymentRequestAPIService PaymentRequestFinalize", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id string
 
@@ -78,7 +79,7 @@ func Test_paystack_PaymentRequestAPIService(t *testing.T) {
 
 	t.Run("Test PaymentRequestAPIService PaymentRequestList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.PaymentRequestAPI.PaymentRequestList(context.Background()).Execute()
 
@@ -90,7 +91,7 @@ func Test_paystack_PaymentRequestAPIService(t *testing.T) {
 
 	t.Run("Test PaymentRequestAPIService PaymentRequestNotify", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id string
 
@@ -104,7 +105,7 @@ func Test_paystack_PaymentRequestAPIService(t *testing.T) {
 
 	t.Run("Test PaymentRequestAPIService PaymentRequestTotals", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.PaymentRequestAPI.PaymentRequestTotals(context.Background()).Execute()
 
@@ -116,7 +117,7 @@ func Test_paystack_PaymentRequestAPIService(t *testing.T) {
 
 	t.Run("Test PaymentRequestAPIService PaymentRequestUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id string
 
@@ -130,7 +131,7 @@ func Test_paystack_PaymentRequestAPIService(t *testing.T) {
 
 	t.Run("Test PaymentRequestAPIService PaymentRequestVerify", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id string
 

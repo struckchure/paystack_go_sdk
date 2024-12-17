@@ -11,10 +11,11 @@ package paystack
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func Test_paystack_TransferRecipientAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_paystack_TransferRecipientAPIService(t *testing.T) {
 
 	t.Run("Test TransferRecipientAPIService TransferrecipientBulk", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.TransferRecipientAPI.TransferrecipientBulk(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_paystack_TransferRecipientAPIService(t *testing.T) {
 
 	t.Run("Test TransferRecipientAPIService TransferrecipientCodeDelete", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var code string
 
@@ -50,7 +51,7 @@ func Test_paystack_TransferRecipientAPIService(t *testing.T) {
 
 	t.Run("Test TransferRecipientAPIService TransferrecipientCodePut", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var code string
 
@@ -64,7 +65,7 @@ func Test_paystack_TransferRecipientAPIService(t *testing.T) {
 
 	t.Run("Test TransferRecipientAPIService TransferrecipientCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.TransferRecipientAPI.TransferrecipientCreate(context.Background()).Execute()
 
@@ -76,7 +77,7 @@ func Test_paystack_TransferRecipientAPIService(t *testing.T) {
 
 	t.Run("Test TransferRecipientAPIService TransferrecipientFetch", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var code string
 
@@ -90,7 +91,7 @@ func Test_paystack_TransferRecipientAPIService(t *testing.T) {
 
 	t.Run("Test TransferRecipientAPIService TransferrecipientList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.TransferRecipientAPI.TransferrecipientList(context.Background()).Execute()
 

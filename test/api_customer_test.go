@@ -11,10 +11,11 @@ package paystack
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func Test_paystack_CustomerAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_paystack_CustomerAPIService(t *testing.T) {
 
 	t.Run("Test CustomerAPIService CustomerCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.CustomerAPI.CustomerCreate(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_paystack_CustomerAPIService(t *testing.T) {
 
 	t.Run("Test CustomerAPIService CustomerDeactivateAuthorization", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.CustomerAPI.CustomerDeactivateAuthorization(context.Background()).Execute()
 
@@ -48,7 +49,7 @@ func Test_paystack_CustomerAPIService(t *testing.T) {
 
 	t.Run("Test CustomerAPIService CustomerFetch", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var code string
 
@@ -62,7 +63,7 @@ func Test_paystack_CustomerAPIService(t *testing.T) {
 
 	t.Run("Test CustomerAPIService CustomerList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.CustomerAPI.CustomerList(context.Background()).Execute()
 
@@ -74,7 +75,7 @@ func Test_paystack_CustomerAPIService(t *testing.T) {
 
 	t.Run("Test CustomerAPIService CustomerRiskAction", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.CustomerAPI.CustomerRiskAction(context.Background()).Execute()
 
@@ -86,7 +87,7 @@ func Test_paystack_CustomerAPIService(t *testing.T) {
 
 	t.Run("Test CustomerAPIService CustomerUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var code string
 
@@ -100,7 +101,7 @@ func Test_paystack_CustomerAPIService(t *testing.T) {
 
 	t.Run("Test CustomerAPIService CustomerValidate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var code string
 

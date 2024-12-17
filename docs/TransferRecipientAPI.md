@@ -2,16 +2,14 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**TransferrecipientBulk**](TransferRecipientAPI.md#TransferrecipientBulk) | **Post** /transferrecipient/bulk | Bulk Create Transfer Recipient
-[**TransferrecipientCodeDelete**](TransferRecipientAPI.md#TransferrecipientCodeDelete) | **Delete** /transferrecipient/{code} | Delete Transfer Recipient
-[**TransferrecipientCodePut**](TransferRecipientAPI.md#TransferrecipientCodePut) | **Put** /transferrecipient/{code} | Update Transfer recipient
-[**TransferrecipientCreate**](TransferRecipientAPI.md#TransferrecipientCreate) | **Post** /transferrecipient | Create Transfer Recipient
-[**TransferrecipientFetch**](TransferRecipientAPI.md#TransferrecipientFetch) | **Get** /transferrecipient/{code} | Fetch Transfer recipient
-[**TransferrecipientList**](TransferRecipientAPI.md#TransferrecipientList) | **Get** /transferrecipient | List Transfer Recipients
-
-
+| Method                                                                                 | HTTP request                         | Description                    |
+| -------------------------------------------------------------------------------------- | ------------------------------------ | ------------------------------ |
+| [**TransferrecipientBulk**](TransferRecipientAPI.md#TransferrecipientBulk)             | **Post** /transferrecipient/bulk     | Bulk Create Transfer Recipient |
+| [**TransferrecipientCodeDelete**](TransferRecipientAPI.md#TransferrecipientCodeDelete) | **Delete** /transferrecipient/{code} | Delete Transfer Recipient      |
+| [**TransferrecipientCodePut**](TransferRecipientAPI.md#TransferrecipientCodePut)       | **Put** /transferrecipient/{code}    | Update Transfer recipient      |
+| [**TransferrecipientCreate**](TransferRecipientAPI.md#TransferrecipientCreate)         | **Post** /transferrecipient          | Create Transfer Recipient      |
+| [**TransferrecipientFetch**](TransferRecipientAPI.md#TransferrecipientFetch)           | **Get** /transferrecipient/{code}    | Fetch Transfer recipient       |
+| [**TransferrecipientList**](TransferRecipientAPI.md#TransferrecipientList)             | **Get** /transferrecipient           | List Transfer Recipients       |
 
 ## TransferrecipientBulk
 
@@ -28,7 +26,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -48,16 +46,13 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransferrecipientBulkRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **batch** | [**[]TransferRecipientCreate**](TransferRecipientCreate.md) | A list of transfer recipient object. Each object should contain type, name, and bank_code.  Any Create Transfer Recipient param can also be passed. | 
+| Name      | Type                                                        | Description                                                                                                                                        | Notes |
+| --------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **batch** | [**[]TransferRecipientCreate**](TransferRecipientCreate.md) | A list of transfer recipient object. Each object should contain type, name, and bank_code. Any Create Transfer Recipient param can also be passed. |
 
 ### Return type
 
@@ -76,7 +71,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## TransferrecipientCodeDelete
 
 > Response TransferrecipientCodeDelete(ctx, code).Execute()
@@ -92,7 +86,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -112,20 +106,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** | Transfer recipient code | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          | Transfer recipient code                                                     |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransferrecipientCodeDeleteRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -144,7 +135,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## TransferrecipientCodePut
 
 > Response TransferrecipientCodePut(ctx, code).Name(name).Email(email).Execute()
@@ -160,7 +150,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -182,22 +172,20 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** | Transfer recipient code | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          | Transfer recipient code                                                     |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransferrecipientCodePutRequest struct via the builder pattern
 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **name** | **string** | Recipient&#39;s name | 
- **email** | **string** | Recipient&#39;s email address | 
+**name** | **string** | Recipient&#39;s name |
+**email** | **string** | Recipient&#39;s email address |
 
 ### Return type
 
@@ -216,10 +204,9 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## TransferrecipientCreate
 
-> Response TransferrecipientCreate(ctx).Type_(type_).Name(name).AccountNumber(accountNumber).BankCode(bankCode).Description(description).Currency(currency).AuthorizationCode(authorizationCode).Metadata(metadata).Execute()
+> Response TransferrecipientCreate(ctx).Type*(type*).Name(name).AccountNumber(accountNumber).BankCode(bankCode).Description(description).Currency(currency).AuthorizationCode(authorizationCode).Metadata(metadata).Execute()
 
 Create Transfer Recipient
 
@@ -232,7 +219,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -259,23 +246,20 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransferrecipientCreateRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type_** | **string** | Recipient Type (Only nuban at this time) | 
- **name** | **string** | Recipient&#39;s name | 
- **accountNumber** | **string** | Recipient&#39;s bank account number | 
- **bankCode** | **string** | Recipient&#39;s bank code. You can get the list of Bank Codes by calling the List Banks endpoint | 
- **description** | **string** | A description for this recipient | 
- **currency** | **string** | Currency for the account receiving the transfer | 
- **authorizationCode** | **string** | An authorization code from a previous transaction | 
- **metadata** | **string** | Stringified JSON object of custom data | 
+| Name                  | Type       | Description                                                                                      | Notes |
+| --------------------- | ---------- | ------------------------------------------------------------------------------------------------ | ----- |
+| **type\_**            | **string** | Recipient Type (Only nuban at this time)                                                         |
+| **name**              | **string** | Recipient&#39;s name                                                                             |
+| **accountNumber**     | **string** | Recipient&#39;s bank account number                                                              |
+| **bankCode**          | **string** | Recipient&#39;s bank code. You can get the list of Bank Codes by calling the List Banks endpoint |
+| **description**       | **string** | A description for this recipient                                                                 |
+| **currency**          | **string** | Currency for the account receiving the transfer                                                  |
+| **authorizationCode** | **string** | An authorization code from a previous transaction                                                |
+| **metadata**          | **string** | Stringified JSON object of custom data                                                           |
 
 ### Return type
 
@@ -294,7 +278,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## TransferrecipientFetch
 
 > Response TransferrecipientFetch(ctx, code).Execute()
@@ -310,7 +293,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -330,20 +313,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**code** | **string** | Transfer recipient code | 
+| Name     | Type                | Description                                                                 | Notes |
+| -------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**  | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **code** | **string**          | Transfer recipient code                                                     |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransferrecipientFetchRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -362,7 +342,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## TransferrecipientList
 
 > Response TransferrecipientList(ctx).PerPage(perPage).Page(page).From(from).To(to).Execute()
@@ -379,7 +358,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -402,19 +381,16 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiTransferrecipientListRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **perPage** | **int32** | Number of records to fetch per page | 
- **page** | **int32** | The section to retrieve | 
- **from** | **time.Time** | The start date | 
- **to** | **time.Time** | The end date | 
+| Name        | Type          | Description                         | Notes |
+| ----------- | ------------- | ----------------------------------- | ----- |
+| **perPage** | **int32**     | Number of records to fetch per page |
+| **page**    | **int32**     | The section to retrieve             |
+| **from**    | **time.Time** | The start date                      |
+| **to**      | **time.Time** | The end date                        |
 
 ### Return type
 
@@ -432,4 +408,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

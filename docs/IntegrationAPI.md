@@ -2,12 +2,10 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**IntegrationFetchPaymentSessionTimeout**](IntegrationAPI.md#IntegrationFetchPaymentSessionTimeout) | **Get** /integration/payment_session_timeout | Fetch Payment Session Timeout
-[**IntegrationUpdatePaymentSessionTimeout**](IntegrationAPI.md#IntegrationUpdatePaymentSessionTimeout) | **Put** /integration/payment_session_timeout | Update Payment Session Timeout
-
-
+| Method                                                                                                 | HTTP request                                 | Description                    |
+| ------------------------------------------------------------------------------------------------------ | -------------------------------------------- | ------------------------------ |
+| [**IntegrationFetchPaymentSessionTimeout**](IntegrationAPI.md#IntegrationFetchPaymentSessionTimeout)   | **Get** /integration/payment_session_timeout | Fetch Payment Session Timeout  |
+| [**IntegrationUpdatePaymentSessionTimeout**](IntegrationAPI.md#IntegrationUpdatePaymentSessionTimeout) | **Put** /integration/payment_session_timeout | Update Payment Session Timeout |
 
 ## IntegrationFetchPaymentSessionTimeout
 
@@ -24,7 +22,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -49,7 +47,6 @@ This endpoint does not need any parameter.
 
 Other parameters are passed through a pointer to a apiIntegrationFetchPaymentSessionTimeoutRequest struct via the builder pattern
 
-
 ### Return type
 
 [**Response**](Response.md)
@@ -67,7 +64,6 @@ Other parameters are passed through a pointer to a apiIntegrationFetchPaymentSes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## IntegrationUpdatePaymentSessionTimeout
 
 > Response IntegrationUpdatePaymentSessionTimeout(ctx).Body(body).Execute()
@@ -83,7 +79,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -103,16 +99,13 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiIntegrationUpdatePaymentSessionTimeoutRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+| Name     | Type                       | Description | Notes |
+| -------- | -------------------------- | ----------- | ----- |
+| **body** | **map[string]interface{}** |             |
 
 ### Return type
 
@@ -130,4 +123,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

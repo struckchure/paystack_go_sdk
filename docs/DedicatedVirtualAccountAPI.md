@@ -2,17 +2,15 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**DedicatedAccountAddSplit**](DedicatedVirtualAccountAPI.md#DedicatedAccountAddSplit) | **Post** /dedicated_account/split | Split Dedicated Account Transaction
-[**DedicatedAccountAvailableProviders**](DedicatedVirtualAccountAPI.md#DedicatedAccountAvailableProviders) | **Get** /dedicated_account/available_providers | Fetch Bank Providers
-[**DedicatedAccountCreate**](DedicatedVirtualAccountAPI.md#DedicatedAccountCreate) | **Post** /dedicated_account | Create Dedicated Account
-[**DedicatedAccountDeactivate**](DedicatedVirtualAccountAPI.md#DedicatedAccountDeactivate) | **Delete** /dedicated_account/{account_id} | Deactivate Dedicated Account
-[**DedicatedAccountFetch**](DedicatedVirtualAccountAPI.md#DedicatedAccountFetch) | **Get** /dedicated_account/{account_id} | Fetch Dedicated Account
-[**DedicatedAccountList**](DedicatedVirtualAccountAPI.md#DedicatedAccountList) | **Get** /dedicated_account | List Dedicated Accounts
-[**DedicatedAccountRemoveSplit**](DedicatedVirtualAccountAPI.md#DedicatedAccountRemoveSplit) | **Delete** /dedicated_account/split | Remove Split from Dedicated Account
-
-
+| Method                                                                                                     | HTTP request                                   | Description                         |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------- | ----------------------------------- |
+| [**DedicatedAccountAddSplit**](DedicatedVirtualAccountAPI.md#DedicatedAccountAddSplit)                     | **Post** /dedicated_account/split              | Split Dedicated Account Transaction |
+| [**DedicatedAccountAvailableProviders**](DedicatedVirtualAccountAPI.md#DedicatedAccountAvailableProviders) | **Get** /dedicated_account/available_providers | Fetch Bank Providers                |
+| [**DedicatedAccountCreate**](DedicatedVirtualAccountAPI.md#DedicatedAccountCreate)                         | **Post** /dedicated_account                    | Create Dedicated Account            |
+| [**DedicatedAccountDeactivate**](DedicatedVirtualAccountAPI.md#DedicatedAccountDeactivate)                 | **Delete** /dedicated_account/{account_id}     | Deactivate Dedicated Account        |
+| [**DedicatedAccountFetch**](DedicatedVirtualAccountAPI.md#DedicatedAccountFetch)                           | **Get** /dedicated_account/{account_id}        | Fetch Dedicated Account             |
+| [**DedicatedAccountList**](DedicatedVirtualAccountAPI.md#DedicatedAccountList)                             | **Get** /dedicated_account                     | List Dedicated Accounts             |
+| [**DedicatedAccountRemoveSplit**](DedicatedVirtualAccountAPI.md#DedicatedAccountRemoveSplit)               | **Delete** /dedicated_account/split            | Remove Split from Dedicated Account |
 
 ## DedicatedAccountAddSplit
 
@@ -29,7 +27,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -51,18 +49,15 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDedicatedAccountAddSplitRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountNumber** | **string** | Valid Dedicated virtual account | 
- **subaccount** | **string** | Subaccount code of the account you want to split the transaction with | 
- **splitCode** | **string** | Split code consisting of the lists of accounts you want to split the transaction with | 
+| Name              | Type       | Description                                                                           | Notes |
+| ----------------- | ---------- | ------------------------------------------------------------------------------------- | ----- |
+| **accountNumber** | **string** | Valid Dedicated virtual account                                                       |
+| **subaccount**    | **string** | Subaccount code of the account you want to split the transaction with                 |
+| **splitCode**     | **string** | Split code consisting of the lists of accounts you want to split the transaction with |
 
 ### Return type
 
@@ -81,7 +76,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## DedicatedAccountAvailableProviders
 
 > Response DedicatedAccountAvailableProviders(ctx).Execute()
@@ -97,7 +91,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -122,7 +116,6 @@ This endpoint does not need any parameter.
 
 Other parameters are passed through a pointer to a apiDedicatedAccountAvailableProvidersRequest struct via the builder pattern
 
-
 ### Return type
 
 [**Response**](Response.md)
@@ -140,7 +133,6 @@ Other parameters are passed through a pointer to a apiDedicatedAccountAvailableP
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## DedicatedAccountCreate
 
 > Response DedicatedAccountCreate(ctx).Customer(customer).PreferredBank(preferredBank).Subaccount(subaccount).SplitCode(splitCode).Execute()
@@ -156,7 +148,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -179,19 +171,16 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDedicatedAccountCreateRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customer** | **string** | Customer ID or code | 
- **preferredBank** | **string** | The bank slug for preferred bank. To get a list of available banks, use the List Providers endpoint | 
- **subaccount** | **string** | Subaccount code of the account you want to split the transaction with | 
- **splitCode** | **string** | Split code consisting of the lists of accounts you want to split the transaction with | 
+| Name              | Type       | Description                                                                                         | Notes |
+| ----------------- | ---------- | --------------------------------------------------------------------------------------------------- | ----- |
+| **customer**      | **string** | Customer ID or code                                                                                 |
+| **preferredBank** | **string** | The bank slug for preferred bank. To get a list of available banks, use the List Providers endpoint |
+| **subaccount**    | **string** | Subaccount code of the account you want to split the transaction with                               |
+| **splitCode**     | **string** | Split code consisting of the lists of accounts you want to split the transaction with               |
 
 ### Return type
 
@@ -210,7 +199,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## DedicatedAccountDeactivate
 
 > Response DedicatedAccountDeactivate(ctx, accountId).Execute()
@@ -226,11 +214,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	accountId := "accountId_example" // string | 
+	accountId := "accountId_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -246,20 +234,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountId** | **string** |  | 
+| Name          | Type                | Description                                                                 | Notes |
+| ------------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**       | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **accountId** | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDedicatedAccountDeactivateRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -277,7 +262,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-
 
 ## DedicatedAccountFetch
 
@@ -294,11 +278,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	accountId := "accountId_example" // string | 
+	accountId := "accountId_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -314,20 +298,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountId** | **string** |  | 
+| Name          | Type                | Description                                                                 | Notes |
+| ------------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**       | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **accountId** | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDedicatedAccountFetchRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -346,7 +327,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## DedicatedAccountList
 
 > Response DedicatedAccountList(ctx).AccountNumber(accountNumber).Customer(customer).Active(active).Currency(currency).ProviderSlug(providerSlug).BankId(bankId).PerPage(perPage).Page(page).Execute()
@@ -362,7 +342,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -389,23 +369,20 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDedicatedAccountListRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountNumber** | **string** |  | 
- **customer** | **string** |  | 
- **active** | **bool** |  | 
- **currency** | **string** |  | 
- **providerSlug** | **string** |  | 
- **bankId** | **string** |  | 
- **perPage** | **string** |  | 
- **page** | **string** |  | 
+| Name              | Type       | Description | Notes |
+| ----------------- | ---------- | ----------- | ----- |
+| **accountNumber** | **string** |             |
+| **customer**      | **string** |             |
+| **active**        | **bool**   |             |
+| **currency**      | **string** |             |
+| **providerSlug**  | **string** |             |
+| **bankId**        | **string** |             |
+| **perPage**       | **string** |             |
+| **page**          | **string** |             |
 
 ### Return type
 
@@ -424,7 +401,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## DedicatedAccountRemoveSplit
 
 > Response DedicatedAccountRemoveSplit(ctx).AccountNumber(accountNumber).Subaccount(subaccount).SplitCode(splitCode).Execute()
@@ -440,7 +416,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -462,18 +438,15 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDedicatedAccountRemoveSplitRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountNumber** | **string** | Valid Dedicated virtual account | 
- **subaccount** | **string** | Subaccount code of the account you want to split the transaction with | 
- **splitCode** | **string** | Split code consisting of the lists of accounts you want to split the transaction with | 
+| Name              | Type       | Description                                                                           | Notes |
+| ----------------- | ---------- | ------------------------------------------------------------------------------------- | ----- |
+| **accountNumber** | **string** | Valid Dedicated virtual account                                                       |
+| **subaccount**    | **string** | Subaccount code of the account you want to split the transaction with                 |
+| **splitCode**     | **string** | Split code consisting of the lists of accounts you want to split the transaction with |
 
 ### Return type
 
@@ -491,4 +464,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

@@ -2,19 +2,17 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**PaymentRequestArchive**](PaymentRequestAPI.md#PaymentRequestArchive) | **Post** /paymentrequest/archive/{id} | Archive Payment Request
-[**PaymentRequestCreate**](PaymentRequestAPI.md#PaymentRequestCreate) | **Post** /paymentrequest | Create Payment Request
-[**PaymentRequestFetch**](PaymentRequestAPI.md#PaymentRequestFetch) | **Get** /paymentrequest/{id} | Fetch Payment Request
-[**PaymentRequestFinalize**](PaymentRequestAPI.md#PaymentRequestFinalize) | **Post** /paymentrequest/finalize/{id} | Finalize Payment Request
-[**PaymentRequestList**](PaymentRequestAPI.md#PaymentRequestList) | **Get** /paymentrequest | List Payment Request
-[**PaymentRequestNotify**](PaymentRequestAPI.md#PaymentRequestNotify) | **Post** /paymentrequest/notify/{id} | Send Notification
-[**PaymentRequestTotals**](PaymentRequestAPI.md#PaymentRequestTotals) | **Get** /paymentrequest/totals | Payment Request Total
-[**PaymentRequestUpdate**](PaymentRequestAPI.md#PaymentRequestUpdate) | **Put** /paymentrequest/{id} | Update Payment Request
-[**PaymentRequestVerify**](PaymentRequestAPI.md#PaymentRequestVerify) | **Get** /paymentrequest/verify/{id} | Verify Payment Request
-
-
+| Method                                                                    | HTTP request                           | Description              |
+| ------------------------------------------------------------------------- | -------------------------------------- | ------------------------ |
+| [**PaymentRequestArchive**](PaymentRequestAPI.md#PaymentRequestArchive)   | **Post** /paymentrequest/archive/{id}  | Archive Payment Request  |
+| [**PaymentRequestCreate**](PaymentRequestAPI.md#PaymentRequestCreate)     | **Post** /paymentrequest               | Create Payment Request   |
+| [**PaymentRequestFetch**](PaymentRequestAPI.md#PaymentRequestFetch)       | **Get** /paymentrequest/{id}           | Fetch Payment Request    |
+| [**PaymentRequestFinalize**](PaymentRequestAPI.md#PaymentRequestFinalize) | **Post** /paymentrequest/finalize/{id} | Finalize Payment Request |
+| [**PaymentRequestList**](PaymentRequestAPI.md#PaymentRequestList)         | **Get** /paymentrequest                | List Payment Request     |
+| [**PaymentRequestNotify**](PaymentRequestAPI.md#PaymentRequestNotify)     | **Post** /paymentrequest/notify/{id}   | Send Notification        |
+| [**PaymentRequestTotals**](PaymentRequestAPI.md#PaymentRequestTotals)     | **Get** /paymentrequest/totals         | Payment Request Total    |
+| [**PaymentRequestUpdate**](PaymentRequestAPI.md#PaymentRequestUpdate)     | **Put** /paymentrequest/{id}           | Update Payment Request   |
+| [**PaymentRequestVerify**](PaymentRequestAPI.md#PaymentRequestVerify)     | **Get** /paymentrequest/verify/{id}    | Verify Payment Request   |
 
 ## PaymentRequestArchive
 
@@ -31,11 +29,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -51,20 +49,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiPaymentRequestArchiveRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -83,7 +78,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## PaymentRequestCreate
 
 > Response PaymentRequestCreate(ctx).Customer(customer).Amount(amount).Currency(currency).DueDate(dueDate).Description(description).LineItems(lineItems).Tax(tax).SendNotification(sendNotification).Draft(draft).HasInvoice(hasInvoice).InvoiceNumber(invoiceNumber).SplitCode(splitCode).Execute()
@@ -100,7 +94,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -131,27 +125,24 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiPaymentRequestCreateRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customer** | **string** | Customer id or code | 
- **amount** | **int32** | Payment request amount. Only useful if line items and tax values are ignored.  The endpoint will throw a friendly warning if neither is available. | 
- **currency** | **string** | Specify the currency of the invoice. Allowed values are NGN, GHS, ZAR and USD. Defaults to NGN | 
- **dueDate** | **time.Time** | ISO 8601 representation of request due date | 
- **description** | **string** | A short description of the payment request | 
- **lineItems** | **[]map[string]interface{}** | Array of line items | 
- **tax** | **[]map[string]interface{}** | Array of taxes | 
- **sendNotification** | **[]map[string]interface{}** | Indicates whether Paystack sends an email notification to customer. Defaults to true | 
- **draft** | **[]map[string]interface{}** | Indicate if request should be saved as draft. Defaults to false and overrides send_notification | 
- **hasInvoice** | **[]map[string]interface{}** | Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided)  even if there are no line_items or tax passed | 
- **invoiceNumber** | **int32** | Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help  override whatever value Paystack decides. Auto increment for subsequent invoices continue from this point. | 
- **splitCode** | **string** | The split code of the transaction split. | 
+| Name                 | Type                         | Description                                                                                                                                                                                                         | Notes |
+| -------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **customer**         | **string**                   | Customer id or code                                                                                                                                                                                                 |
+| **amount**           | **int32**                    | Payment request amount. Only useful if line items and tax values are ignored. The endpoint will throw a friendly warning if neither is available.                                                                   |
+| **currency**         | **string**                   | Specify the currency of the invoice. Allowed values are NGN, GHS, ZAR and USD. Defaults to NGN                                                                                                                      |
+| **dueDate**          | **time.Time**                | ISO 8601 representation of request due date                                                                                                                                                                         |
+| **description**      | **string**                   | A short description of the payment request                                                                                                                                                                          |
+| **lineItems**        | **[]map[string]interface{}** | Array of line items                                                                                                                                                                                                 |
+| **tax**              | **[]map[string]interface{}** | Array of taxes                                                                                                                                                                                                      |
+| **sendNotification** | **[]map[string]interface{}** | Indicates whether Paystack sends an email notification to customer. Defaults to true                                                                                                                                |
+| **draft**            | **[]map[string]interface{}** | Indicate if request should be saved as draft. Defaults to false and overrides send_notification                                                                                                                     |
+| **hasInvoice**       | **[]map[string]interface{}** | Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided) even if there are no line_items or tax passed                                                                  |
+| **invoiceNumber**    | **int32**                    | Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help override whatever value Paystack decides. Auto increment for subsequent invoices continue from this point. |
+| **splitCode**        | **string**                   | The split code of the transaction split.                                                                                                                                                                            |
 
 ### Return type
 
@@ -170,7 +161,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## PaymentRequestFetch
 
 > Response PaymentRequestFetch(ctx, id).Execute()
@@ -186,11 +176,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -206,20 +196,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiPaymentRequestFetchRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -237,7 +224,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-
 
 ## PaymentRequestFinalize
 
@@ -254,11 +240,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -274,20 +260,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiPaymentRequestFinalizeRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -305,7 +288,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-
 
 ## PaymentRequestList
 
@@ -323,7 +305,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -349,22 +331,19 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiPaymentRequestListRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **perPage** | **int32** | Number of records to fetch per page | 
- **page** | **int32** | The section to retrieve | 
- **customer** | **string** | Customer ID | 
- **status** | **string** | Invoice status to filter | 
- **currency** | **string** | If your integration supports more than one currency, choose the one to filter | 
- **from** | **time.Time** | The start date | 
- **to** | **time.Time** | The end date | 
+| Name         | Type          | Description                                                                   | Notes |
+| ------------ | ------------- | ----------------------------------------------------------------------------- | ----- |
+| **perPage**  | **int32**     | Number of records to fetch per page                                           |
+| **page**     | **int32**     | The section to retrieve                                                       |
+| **customer** | **string**    | Customer ID                                                                   |
+| **status**   | **string**    | Invoice status to filter                                                      |
+| **currency** | **string**    | If your integration supports more than one currency, choose the one to filter |
+| **from**     | **time.Time** | The start date                                                                |
+| **to**       | **time.Time** | The end date                                                                  |
 
 ### Return type
 
@@ -382,7 +361,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-
 
 ## PaymentRequestNotify
 
@@ -399,11 +377,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -419,20 +397,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiPaymentRequestNotifyRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -451,7 +426,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## PaymentRequestTotals
 
 > Response PaymentRequestTotals(ctx).Execute()
@@ -467,7 +441,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -492,7 +466,6 @@ This endpoint does not need any parameter.
 
 Other parameters are passed through a pointer to a apiPaymentRequestTotalsRequest struct via the builder pattern
 
-
 ### Return type
 
 [**Response**](Response.md)
@@ -510,7 +483,6 @@ Other parameters are passed through a pointer to a apiPaymentRequestTotalsReques
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## PaymentRequestUpdate
 
 > Response PaymentRequestUpdate(ctx, id).Customer(customer).Amount(amount).Currency(currency).DueDate(dueDate).Description(description).LineItems(lineItems).Tax(tax).SendNotification(sendNotification).Draft(draft).HasInvoice(hasInvoice).InvoiceNumber(invoiceNumber).SplitCode(splitCode).Execute()
@@ -527,11 +499,11 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string |
 	customer := "customer_example" // string | Customer id or code (optional)
 	amount := int32(56) // int32 | Payment request amount. Only useful if line items and tax values are ignored.  The endpoint will throw a friendly warning if neither is available. (optional)
 	currency := "currency_example" // string | Specify the currency of the invoice. Allowed values are NGN, GHS, ZAR and USD. Defaults to NGN (optional)
@@ -559,32 +531,30 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiPaymentRequestUpdateRequest struct via the builder pattern
 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **customer** | **string** | Customer id or code | 
- **amount** | **int32** | Payment request amount. Only useful if line items and tax values are ignored.  The endpoint will throw a friendly warning if neither is available. | 
- **currency** | **string** | Specify the currency of the invoice. Allowed values are NGN, GHS, ZAR and USD. Defaults to NGN | 
- **dueDate** | **time.Time** | ISO 8601 representation of request due date | 
- **description** | **string** | A short description of the payment request | 
- **lineItems** | **[]map[string]interface{}** | Array of line items | 
- **tax** | **[]map[string]interface{}** | Array of taxes | 
- **sendNotification** | **[]map[string]interface{}** | Indicates whether Paystack sends an email notification to customer. Defaults to true | 
- **draft** | **[]map[string]interface{}** | Indicate if request should be saved as draft. Defaults to false and overrides send_notification | 
- **hasInvoice** | **[]map[string]interface{}** | Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided)  even if there are no line_items or tax passed | 
- **invoiceNumber** | **int32** | Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help  override whatever value Paystack decides. Auto increment for subsequent invoices continue from this point. | 
- **splitCode** | **string** | The split code of the transaction split. | 
+**customer** | **string** | Customer id or code |
+**amount** | **int32** | Payment request amount. Only useful if line items and tax values are ignored. The endpoint will throw a friendly warning if neither is available. |
+**currency** | **string** | Specify the currency of the invoice. Allowed values are NGN, GHS, ZAR and USD. Defaults to NGN |
+**dueDate** | **time.Time** | ISO 8601 representation of request due date |
+**description** | **string** | A short description of the payment request |
+**lineItems** | **[]map[string]interface{}** | Array of line items |
+**tax** | **[]map[string]interface{}** | Array of taxes |
+**sendNotification** | **[]map[string]interface{}** | Indicates whether Paystack sends an email notification to customer. Defaults to true |
+**draft** | **[]map[string]interface{}** | Indicate if request should be saved as draft. Defaults to false and overrides send_notification |
+**hasInvoice** | **[]map[string]interface{}** | Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided) even if there are no line_items or tax passed |
+**invoiceNumber** | **int32** | Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help override whatever value Paystack decides. Auto increment for subsequent invoices continue from this point. |
+**splitCode** | **string** | The split code of the transaction split. |
 
 ### Return type
 
@@ -603,7 +573,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## PaymentRequestVerify
 
 > Response PaymentRequestVerify(ctx, id).Execute()
@@ -619,11 +588,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -639,20 +608,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **id**  | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiPaymentRequestVerifyRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -670,4 +636,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

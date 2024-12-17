@@ -2,17 +2,15 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ChargeCheck**](ChargeAPI.md#ChargeCheck) | **Get** /charge/{reference} | Check pending charge
-[**ChargeCreate**](ChargeAPI.md#ChargeCreate) | **Post** /charge | Create Charge
-[**ChargeSubmitAddress**](ChargeAPI.md#ChargeSubmitAddress) | **Post** /charge/submit_address | Submit Address
-[**ChargeSubmitBirthday**](ChargeAPI.md#ChargeSubmitBirthday) | **Post** /charge/submit_birthday | Submit Birthday
-[**ChargeSubmitOtp**](ChargeAPI.md#ChargeSubmitOtp) | **Post** /charge/submit_otp | Submit OTP
-[**ChargeSubmitPhone**](ChargeAPI.md#ChargeSubmitPhone) | **Post** /charge/submit_phone | Submit Phone
-[**ChargeSubmitPin**](ChargeAPI.md#ChargeSubmitPin) | **Post** /charge/submit_pin | Submit PIN
-
-
+| Method                                                        | HTTP request                     | Description          |
+| ------------------------------------------------------------- | -------------------------------- | -------------------- |
+| [**ChargeCheck**](ChargeAPI.md#ChargeCheck)                   | **Get** /charge/{reference}      | Check pending charge |
+| [**ChargeCreate**](ChargeAPI.md#ChargeCreate)                 | **Post** /charge                 | Create Charge        |
+| [**ChargeSubmitAddress**](ChargeAPI.md#ChargeSubmitAddress)   | **Post** /charge/submit_address  | Submit Address       |
+| [**ChargeSubmitBirthday**](ChargeAPI.md#ChargeSubmitBirthday) | **Post** /charge/submit_birthday | Submit Birthday      |
+| [**ChargeSubmitOtp**](ChargeAPI.md#ChargeSubmitOtp)           | **Post** /charge/submit_otp      | Submit OTP           |
+| [**ChargeSubmitPhone**](ChargeAPI.md#ChargeSubmitPhone)       | **Post** /charge/submit_phone    | Submit Phone         |
+| [**ChargeSubmitPin**](ChargeAPI.md#ChargeSubmitPin)           | **Post** /charge/submit_pin      | Submit PIN           |
 
 ## ChargeCheck
 
@@ -29,11 +27,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	reference := "reference_example" // string | 
+	reference := "reference_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -49,20 +47,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**reference** | **string** |  | 
+| Name          | Type                | Description                                                                 | Notes |
+| ------------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx**       | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **reference** | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiChargeCheckRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -81,7 +76,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## ChargeCreate
 
 > Response ChargeCreate(ctx).Email(email).Amount(amount).AuthorizationCode(authorizationCode).Pin(pin).Reference(reference).Birthday(birthday).DeviceId(deviceId).Metadata(metadata).Bank(bank).MobileMoney(mobileMoney).Ussd(ussd).Eft(eft).Execute()
@@ -98,7 +92,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -129,27 +123,24 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiChargeCreateRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **string** | Customer&#39;s email address | 
- **amount** | **string** | Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR | 
- **authorizationCode** | **string** | An authorization code to charge. | 
- **pin** | **string** | 4-digit PIN (send with a non-reusable authorization code) | 
- **reference** | **string** | Unique transaction reference. Only -, .&#x60;, &#x3D; and alphanumeric characters allowed. | 
- **birthday** | **time.Time** | The customer&#39;s birthday in the format YYYY-MM-DD e.g 2017-05-16 | 
- **deviceId** | **string** | This is the unique identifier of the device a user uses in making payment.  Only -, .&#x60;, &#x3D; and alphanumeric characters are allowed. | 
- **metadata** | **string** | Stringified JSON object of custom data | 
- **bank** | [**Bank**](Bank.md) |  | 
- **mobileMoney** | [**MobileMoney**](MobileMoney.md) |  | 
- **ussd** | [**USSD**](USSD.md) |  | 
- **eft** | [**EFT**](EFT.md) |  | 
+| Name                  | Type                              | Description                                                                                                                                 | Notes |
+| --------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **email**             | **string**                        | Customer&#39;s email address                                                                                                                |
+| **amount**            | **string**                        | Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR                                     |
+| **authorizationCode** | **string**                        | An authorization code to charge.                                                                                                            |
+| **pin**               | **string**                        | 4-digit PIN (send with a non-reusable authorization code)                                                                                   |
+| **reference**         | **string**                        | Unique transaction reference. Only -, .&#x60;, &#x3D; and alphanumeric characters allowed.                                                  |
+| **birthday**          | **time.Time**                     | The customer&#39;s birthday in the format YYYY-MM-DD e.g 2017-05-16                                                                         |
+| **deviceId**          | **string**                        | This is the unique identifier of the device a user uses in making payment. Only -, .&#x60;, &#x3D; and alphanumeric characters are allowed. |
+| **metadata**          | **string**                        | Stringified JSON object of custom data                                                                                                      |
+| **bank**              | [**Bank**](Bank.md)               |                                                                                                                                             |
+| **mobileMoney**       | [**MobileMoney**](MobileMoney.md) |                                                                                                                                             |
+| **ussd**              | [**USSD**](USSD.md)               |                                                                                                                                             |
+| **eft**               | [**EFT**](EFT.md)                 |                                                                                                                                             |
 
 ### Return type
 
@@ -168,7 +159,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## ChargeSubmitAddress
 
 > Response ChargeSubmitAddress(ctx).Address(address).City(city).State(state).Zipcode(zipcode).Reference(reference).Execute()
@@ -184,7 +174,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -208,20 +198,17 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiChargeSubmitAddressRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **address** | **string** | Customer&#39;s address | 
- **city** | **string** | Customer&#39;s city | 
- **state** | **string** | Customer&#39;s state | 
- **zipcode** | **string** | Customer&#39;s zipcode | 
- **reference** | **string** | The reference of the ongoing transaction | 
+| Name          | Type       | Description                              | Notes |
+| ------------- | ---------- | ---------------------------------------- | ----- |
+| **address**   | **string** | Customer&#39;s address                   |
+| **city**      | **string** | Customer&#39;s city                      |
+| **state**     | **string** | Customer&#39;s state                     |
+| **zipcode**   | **string** | Customer&#39;s zipcode                   |
+| **reference** | **string** | The reference of the ongoing transaction |
 
 ### Return type
 
@@ -240,7 +227,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## ChargeSubmitBirthday
 
 > Response ChargeSubmitBirthday(ctx).Birthday(birthday).Reference(reference).Execute()
@@ -256,7 +242,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -277,17 +263,14 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiChargeSubmitBirthdayRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **birthday** | **string** | Customer&#39;s birthday in the format YYYY-MM-DD e.g 2016-09-21 | 
- **reference** | **string** | The reference of the ongoing transaction | 
+| Name          | Type       | Description                                                     | Notes |
+| ------------- | ---------- | --------------------------------------------------------------- | ----- |
+| **birthday**  | **string** | Customer&#39;s birthday in the format YYYY-MM-DD e.g 2016-09-21 |
+| **reference** | **string** | The reference of the ongoing transaction                        |
 
 ### Return type
 
@@ -306,7 +289,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## ChargeSubmitOtp
 
 > Response ChargeSubmitOtp(ctx).Otp(otp).Reference(reference).Execute()
@@ -322,7 +304,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -343,17 +325,14 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiChargeSubmitOtpRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **otp** | **string** | Customer&#39;s OTP | 
- **reference** | **string** | The reference of the ongoing transaction | 
+| Name          | Type       | Description                              | Notes |
+| ------------- | ---------- | ---------------------------------------- | ----- |
+| **otp**       | **string** | Customer&#39;s OTP                       |
+| **reference** | **string** | The reference of the ongoing transaction |
 
 ### Return type
 
@@ -372,7 +351,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## ChargeSubmitPhone
 
 > Response ChargeSubmitPhone(ctx).Phone(phone).Reference(reference).Execute()
@@ -388,7 +366,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -409,17 +387,14 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiChargeSubmitPhoneRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **phone** | **string** | Customer&#39;s mobile number | 
- **reference** | **string** | The reference of the ongoing transaction | 
+| Name          | Type       | Description                              | Notes |
+| ------------- | ---------- | ---------------------------------------- | ----- |
+| **phone**     | **string** | Customer&#39;s mobile number             |
+| **reference** | **string** | The reference of the ongoing transaction |
 
 ### Return type
 
@@ -438,7 +413,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## ChargeSubmitPin
 
 > Response ChargeSubmitPin(ctx).Pin(pin).Reference(reference).Execute()
@@ -454,7 +428,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -475,17 +449,14 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiChargeSubmitPinRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pin** | **string** | Customer&#39;s PIN | 
- **reference** | **string** | Transaction reference that requires the PIN | 
+| Name          | Type       | Description                                 | Notes |
+| ------------- | ---------- | ------------------------------------------- | ----- |
+| **pin**       | **string** | Customer&#39;s PIN                          |
+| **reference** | **string** | Transaction reference that requires the PIN |
 
 ### Return type
 
@@ -503,4 +474,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

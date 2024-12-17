@@ -2,19 +2,17 @@
 
 All URIs are relative to *https://api.paystack.co*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**VerificationAvs**](VerificationAPI.md#VerificationAvs) | **Get** /address_verification/states | List States (AVS)
-[**VerificationFetchBanks**](VerificationAPI.md#VerificationFetchBanks) | **Get** /bank | Fetch Banks
-[**VerificationListCountries**](VerificationAPI.md#VerificationListCountries) | **Get** /country | List Countries
-[**VerificationResolveAccountNumber**](VerificationAPI.md#VerificationResolveAccountNumber) | **Get** /bank/resolve | Resolve Account Number
-[**VerificationResolveCardBin**](VerificationAPI.md#VerificationResolveCardBin) | **Get** /decision/bin/{bin} | Resolve Card BIN
-
-
+| Method                                                                                      | HTTP request                         | Description            |
+| ------------------------------------------------------------------------------------------- | ------------------------------------ | ---------------------- |
+| [**VerificationAvs**](VerificationAPI.md#VerificationAvs)                                   | **Get** /address_verification/states | List States (AVS)      |
+| [**VerificationFetchBanks**](VerificationAPI.md#VerificationFetchBanks)                     | **Get** /bank                        | Fetch Banks            |
+| [**VerificationListCountries**](VerificationAPI.md#VerificationListCountries)               | **Get** /country                     | List Countries         |
+| [**VerificationResolveAccountNumber**](VerificationAPI.md#VerificationResolveAccountNumber) | **Get** /bank/resolve                | Resolve Account Number |
+| [**VerificationResolveCardBin**](VerificationAPI.md#VerificationResolveCardBin)             | **Get** /decision/bin/{bin}          | Resolve Card BIN       |
 
 ## VerificationAvs
 
-> Response VerificationAvs(ctx).Type_(type_).Country(country).Currency(currency).Execute()
+> Response VerificationAvs(ctx).Type*(type*).Country(country).Currency(currency).Execute()
 
 List States (AVS)
 
@@ -27,7 +25,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -49,18 +47,15 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiVerificationAvsRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type_** | **string** |  | 
- **country** | **string** |  | 
- **currency** | **string** |  | 
+| Name         | Type       | Description | Notes |
+| ------------ | ---------- | ----------- | ----- |
+| **type\_**   | **string** |             |
+| **country**  | **string** |             |
+| **currency** | **string** |             |
 
 ### Return type
 
@@ -79,7 +74,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## VerificationFetchBanks
 
 > Response VerificationFetchBanks(ctx).Country(country).PayWithBankTransfer(payWithBankTransfer).UseCursor(useCursor).PerPage(perPage).Next(next).Previous(previous).Gateway(gateway).Execute()
@@ -95,7 +89,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -121,22 +115,19 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiVerificationFetchBanksRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **country** | **string** |  | 
- **payWithBankTransfer** | **bool** |  | 
- **useCursor** | **bool** |  | 
- **perPage** | **int32** |  | 
- **next** | **string** |  | 
- **previous** | **string** |  | 
- **gateway** | **string** |  | 
+| Name                    | Type       | Description | Notes |
+| ----------------------- | ---------- | ----------- | ----- |
+| **country**             | **string** |             |
+| **payWithBankTransfer** | **bool**   |             |
+| **useCursor**           | **bool**   |             |
+| **perPage**             | **int32**  |             |
+| **next**                | **string** |             |
+| **previous**            | **string** |             |
+| **gateway**             | **string** |             |
 
 ### Return type
 
@@ -155,7 +146,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## VerificationListCountries
 
 > Response VerificationListCountries(ctx).Execute()
@@ -171,7 +161,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -196,7 +186,6 @@ This endpoint does not need any parameter.
 
 Other parameters are passed through a pointer to a apiVerificationListCountriesRequest struct via the builder pattern
 
-
 ### Return type
 
 [**Response**](Response.md)
@@ -214,7 +203,6 @@ Other parameters are passed through a pointer to a apiVerificationListCountriesR
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-
 ## VerificationResolveAccountNumber
 
 > Response VerificationResolveAccountNumber(ctx).AccountNumber(accountNumber).BankCode(bankCode).Execute()
@@ -230,7 +218,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
@@ -251,17 +239,14 @@ func main() {
 
 ### Path Parameters
 
-
-
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiVerificationResolveAccountNumberRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountNumber** | **int32** |  | 
- **bankCode** | **int32** |  | 
+| Name              | Type      | Description | Notes |
+| ----------------- | --------- | ----------- | ----- |
+| **accountNumber** | **int32** |             |
+| **bankCode**      | **int32** |             |
 
 ### Return type
 
@@ -279,7 +264,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-
 
 ## VerificationResolveCardBin
 
@@ -296,11 +280,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func main() {
-	bin := "bin_example" // string | 
+	bin := "bin_example" // string |
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -316,20 +300,17 @@ func main() {
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bin** | **string** |  | 
+| Name    | Type                | Description                                                                 | Notes |
+| ------- | ------------------- | --------------------------------------------------------------------------- | ----- |
+| **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc. |
+| **bin** | **string**          |                                                                             |
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiVerificationResolveCardBinRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
 
 ### Return type
 
@@ -347,4 +328,3 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
-

@@ -11,10 +11,11 @@ package paystack
 
 import (
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/struckchure/paystack_go_sdk"
 )
 
 func Test_paystack_SubscriptionAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_paystack_SubscriptionAPIService(t *testing.T) {
 
 	t.Run("Test SubscriptionAPIService SubscriptionCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.SubscriptionAPI.SubscriptionCreate(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_paystack_SubscriptionAPIService(t *testing.T) {
 
 	t.Run("Test SubscriptionAPIService SubscriptionDisable", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.SubscriptionAPI.SubscriptionDisable(context.Background()).Execute()
 
@@ -48,7 +49,7 @@ func Test_paystack_SubscriptionAPIService(t *testing.T) {
 
 	t.Run("Test SubscriptionAPIService SubscriptionEnable", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.SubscriptionAPI.SubscriptionEnable(context.Background()).Execute()
 
@@ -60,7 +61,7 @@ func Test_paystack_SubscriptionAPIService(t *testing.T) {
 
 	t.Run("Test SubscriptionAPIService SubscriptionFetch", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var code string
 
@@ -74,7 +75,7 @@ func Test_paystack_SubscriptionAPIService(t *testing.T) {
 
 	t.Run("Test SubscriptionAPIService SubscriptionList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.SubscriptionAPI.SubscriptionList(context.Background()).Execute()
 
@@ -86,7 +87,7 @@ func Test_paystack_SubscriptionAPIService(t *testing.T) {
 
 	t.Run("Test SubscriptionAPIService SubscriptionManageEmail", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var code string
 
@@ -100,7 +101,7 @@ func Test_paystack_SubscriptionAPIService(t *testing.T) {
 
 	t.Run("Test SubscriptionAPIService SubscriptionManageLink", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var code string
 
